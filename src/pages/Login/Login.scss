@@ -1,0 +1,277 @@
+.Wrap {
+  width: 100%;
+  .contain {
+    width: 1250px;
+    padding-top: 230px;
+    padding-bottom: 200px;
+
+    .tabs {
+      display: flex;
+      width: 460px;
+      .tab {
+        width: 230px;
+        height: 50px;
+        background: #fff;
+        color: #000;
+        border: 1px solid #e2e2e2;
+        text-align: center;
+        line-height: 50px;
+        font-size: 1rem;
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 400;
+        cursor: pointer;
+      }
+
+      .active-tab {
+        background: #000;
+        height: 51.4px;
+        color: #fff;
+        border: none;
+      }
+    }
+
+    .content-tabs {
+      .content {
+        width: 460px;
+        display: none;
+      }
+
+      .active-content {
+        width: 460px;
+        display: block;
+
+        > form {
+          input[type="text"] {
+            width: 458px;
+            height: 46px;
+            margin-top: 22px;
+            margin-bottom: 10px;
+            border: 1px solid #dcdcdc;
+            padding-left: 10px;
+            font-size: 14px;
+            font-family: "Noto Sans KR", sans-serif;
+            box-sizing: border-box;
+          }
+          input[type="password"] {
+            width: 458px;
+            height: 46px;
+            margin-bottom: 10px;
+            border: 1px solid #dcdcdc;
+            font-family: "Noto Sans KR", sans-serif;
+            font-size: 14px;
+            padding-left: 10px;
+            box-sizing: border-box;
+          }
+          input[type="checkbox"] {
+            appearance: none;
+            border-radius: 3px;
+            width: 15px;
+            height: 15px;
+            border: 1px solid #b7b7b7;
+            margin-right: 10px;
+            position: relative;
+            top: 2px;
+            cursor: pointer;
+            &:checked {
+              background-image: url("../../images/checked.png");
+              background-size: 100% 100%;
+              background-repeat: no-repeat;
+              border: none;
+            }
+          }
+          label {
+            > span {
+              font-size: 15px;
+              font-family: "Noto Sans KR", sans-serif;
+              font-weight: 500;
+              cursor: pointer;
+            }
+          }
+
+          input[type="button"] {
+            width: 458px;
+            height: 57px;
+            background: #000;
+            border: none;
+            color: #fff;
+            margin-top: 20px;
+            font-size: 18px;
+            font-family: "Noto Sans KR", sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .logLink {
+        width: 455px;
+        display: flex;
+        justify-content: space-around;
+        padding: 25px 0;
+        > a {
+          > span {
+            font-family: "Noto Sans KR", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            position: relative;
+            color: #6b6b6b;
+            &::after {
+              content: "";
+              display: block;
+              width: 2px;
+              height: 25px;
+              background: #e0e0e0;
+              position: absolute;
+              top: 0;
+              right: -41px;
+            }
+          }
+          &:nth-of-type(3) span:after {
+            display: none;
+          }
+        }
+      }
+
+      .loginWrap {
+        .google_login {
+          width: 460px;
+          height: 58px;
+          border: 1px solid #dadada;
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+          cursor: pointer;
+          .google_logo {
+            width: 61px;
+            height: 100%;
+            margin: 0;
+            border-right: 1px solid #dadada;
+            background: url("../../images/google_logo.png") no-repeat center
+              center/50%;
+          }
+          > span {
+            font-family: "Noto Sans KR", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: #000;
+            margin-left: 30px;
+          }
+        }
+        .naver_login {
+          width: 460px;
+          height: 58px;
+          border: 1px solid #dadada;
+          display: flex;
+          align-items: center;
+          margin-bottom: 110px;
+          cursor: pointer;
+
+          .naver_logo {
+            width: 61px;
+            height: 100%;
+            margin: 0;
+            border-right: 1px solid #dadada;
+            background: url("../../images/naver_logo.png") no-repeat center
+              center/50%;
+          }
+          > span {
+            font-family: "Noto Sans KR", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: #000;
+            margin-left: 30px;
+          }
+        }
+      }
+
+      input[type="submit"] {
+        width: 458px;
+        height: 57px;
+        background: #000;
+        border: none;
+        color: #fff;
+        margin-top: 20px;
+        font-size: 18px;
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 500;
+        cursor: pointer;
+        margin-bottom: 120px;
+      }
+    }
+  }
+}
+
+// 반응형
+
+@media all and (max-width: 1024px) {
+  .Wrap {
+    .contain {
+      width: 100%;
+    }
+  }
+}
+
+@media all and (max-width: 425px) {
+  .Wrap {
+    .contain {
+      padding-left: 20px;
+      padding-right: 20px;
+      box-sizing: border-box;
+      .tabs {
+        width: 100%;
+      }
+      .content-tabs {
+        width: 100%;
+
+        .active-content {
+          width: 100%;
+
+          > form {
+            input[type="text"] {
+              width: 100%;
+            }
+            input[type="password"] {
+              width: 100%;
+            }
+            input[type="button"] {
+              width: 100%;
+            }
+          }
+          .logLink {
+            width: 100%;
+          }
+          .loginWrap {
+            .google_login {
+              width: 100%;
+            }
+            .naver_login {
+              width: 100%;
+            }
+          }
+
+          input[type="submit"] {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 425px) {
+  .Wrap {
+    .contain {
+      .content-tabs {
+        .logLink {
+          > a {
+            > span {
+              &::after {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

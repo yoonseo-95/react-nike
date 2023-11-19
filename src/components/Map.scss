@@ -1,0 +1,41 @@
+.content {
+  width: 100%;
+
+  .wrap {
+    width: 1250px;
+    display: flex;
+    margin-top: 100px;
+
+    >div {
+      width: calc(100%/3);
+      text-align: center;
+      line-height: 40px;
+      padding: 60px 0;
+      font-family:"Noto Sans KR", sans-serif;
+
+      .icon {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+      }
+      >h3 {
+        font-size: 20px;
+      }
+      >p {
+        font-size: 15px;
+        cursor:pointer;
+
+        &:nth-of-type(1) {
+          cursor:auto;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .content {
+    .wrap {
+      width: 100%;
+    }
+  }
+}

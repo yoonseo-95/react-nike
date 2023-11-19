@@ -1,0 +1,257 @@
+.newProduct {
+  padding-top: 100px;
+
+  .container {
+    width: 320px;
+
+    .title {
+      font-family: "Noto Sans KR", sans-serif;
+      font-weight: 600;
+      font-size: 1.8rem;
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 33%;
+        height: 3px;
+        background: #000000;
+        position: absolute;
+        left: 107px;
+        top: 45px;
+      }
+    }
+    .img {
+      width: 318px;
+      height: 300px;
+      border: 1px solid #eee;
+      margin-bottom: 40px;
+      overflow: hidden;
+      > img {
+        width: 100%;
+      }
+    }
+    form {
+      .file {
+        width: 100%;
+        height: 40px;
+        border: 1px solid #cccccc;
+        margin-bottom: 20px;
+        padding: 7px;
+        box-sizing: border-box;
+      }
+      .name {
+        font-family: "Noto Sans KR", sans-serif;
+        margin-right: 36px;
+      }
+      .productName {
+        width: 74.9%;
+        height: 28px;
+        border: 1px solid #cccccc;
+        border-radius: 2px;
+        padding: 0 12px;
+        box-sizing: border-box;
+        font-size: 15px;
+        margin-bottom: 20px;
+      }
+      .price {
+        font-family: "Noto Sans KR", sans-serif;
+        margin-right: 36px;
+      }
+      .productPrice {
+        width: 74.9%;
+        height: 28px;
+        border: 1px solid #cccccc;
+        border-radius: 2px;
+        padding: 0 12px;
+        box-sizing: border-box;
+        font-size: 15px;
+        margin-bottom: 20px;
+      }
+      .subTitle {
+        font-family: "Noto Sans KR", sans-serif;
+        margin-right: 50px;
+      }
+      .productSubTitle {
+        width: 74.9%;
+        height: 28px;
+        border: 1px solid #cccccc;
+        border-radius: 2px;
+        padding: 0 12px;
+        box-sizing: border-box;
+        font-size: 15px;
+        margin-bottom: 20px;
+      }
+      .category {
+        font-family: "Noto Sans KR", sans-serif;
+        margin-right: 20px;
+      }
+      .productCategory {
+        width: 74.9%;
+        height: 28px;
+        border: 1px solid #cccccc;
+        border-radius: 2px;
+        padding: 0 12px;
+        box-sizing: border-box;
+        font-size: 15px;
+        margin-bottom: 20px;
+      }
+      .description {
+        font-family: "Noto Sans KR", sans-serif;
+        margin-right: 20px;
+      }
+      .productDescription {
+        width: 74.9%;
+        height: 28px;
+        border: 1px solid #cccccc;
+        border-radius: 2px;
+        padding: 0 12px;
+        box-sizing: border-box;
+        font-size: 15px;
+        margin-bottom: 20px;
+      }
+      .options {
+        font-family: "Noto Sans KR", sans-serif;
+        margin-right: 52px;
+      }
+      .productOptions {
+        width: 74.9%;
+        height: 28px;
+        border: 1px solid #cccccc;
+        border-radius: 2px;
+        padding: 0 12px;
+        box-sizing: border-box;
+        font-size: 15px;
+        margin-bottom: 20px;
+      }
+      .colorWrap1 {
+        display: flex;
+        .colorName1 {
+          width: 59%;
+          height: 28px;
+          border: 1px solid #cccccc;
+          border-radius: 2px;
+          padding: 0 12px;
+          box-sizing: border-box;
+          font-size: 15px;
+          margin-bottom: 20px;
+          margin-right: 10px;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+      .colorWrap2 {
+        display: flex;
+        .colorName2 {
+          width: 59%;
+          height: 28px;
+          border: 1px solid #cccccc;
+          border-radius: 2px;
+          padding: 0 12px;
+          box-sizing: border-box;
+          font-size: 15px;
+          margin-bottom: 20px;
+          margin-right: 10px;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+      .color {
+        font-family: "Noto Sans KR", sans-serif;
+        margin-right: 33px;
+      }
+      .productColor {
+        width: 10%;
+        height: 28px;
+        border: 1px solid #cccccc;
+        border-radius: 2px;
+        box-sizing: border-box;
+        font-size: 15px;
+        margin-bottom: 20px;
+        &:nth-of-type(1) {
+          margin-right: 10px;
+        }
+      }
+      > input:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .newProduct {
+    .container {
+      width: 100%;
+      padding: 120px 20px;
+      box-sizing: border-box;
+      > form {
+        .name {
+          display: block;
+          margin-right: 0;
+          margin-bottom: 10px;
+        }
+        .productName {
+          width: 100%;
+          height: 40px;
+        }
+        .price {
+          display: block;
+          margin-right: 0;
+          margin-bottom: 10px;
+        }
+        .productPrice {
+          width: 100%;
+          height: 40px;
+        }
+        .subTitle {
+          display: block;
+          margin-right: 0;
+          margin-bottom: 10px;
+        }
+        .productSubTitle {
+          width: 100%;
+          height: 40px;
+        }
+        .category {
+          display: block;
+          margin-right: 0;
+          margin-bottom: 10px;
+        }
+        .productCategory {
+          width: 100%;
+          height: 40px;
+        }
+        .description {
+          display: block;
+          margin-right: 0;
+          margin-bottom: 10px;
+        }
+        .productDescription {
+          width: 100%;
+          height: 40px;
+        }
+        .options {
+          display: block;
+          margin-right: 0;
+          margin-bottom: 10px;
+        }
+        .productOptions {
+          width: 100%;
+          height: 40px;
+        }
+        .color {
+          display: block;
+          margin-right: 0;
+          margin-bottom: 10px;
+        }
+        .productColor {
+          width: 100%;
+          height: 40px;
+        }
+      }
+    }
+  }
+}

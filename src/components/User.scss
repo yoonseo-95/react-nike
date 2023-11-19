@@ -1,0 +1,10 @@
+.user {
+  display: flex;
+  align-items: center;
+  .userImg {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+}

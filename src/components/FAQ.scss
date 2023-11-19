@@ -1,0 +1,134 @@
+.container {
+  padding: 120px 0;
+
+  >h2 {
+    font-size: 2rem;
+    font-family: "Noto Sans KR", sans-serif;
+    text-align: center;
+    margin-bottom: 45px;
+  }
+  .category-tabs {
+    display: flex;
+    width: 540px;
+    margin: 40px auto;
+    transition: 0.5s;
+
+    .tabs {
+      cursor: pointer;
+      font-family: "Noto Sans KR", sans-serif;
+      font-weight: 500;
+      height: 30px;
+      color: #858585;
+
+      &:hover {
+        color: #000;
+      }
+    }
+    .active-tabs {
+      border-bottom: 2px solid #313131;
+      color: #000;
+    }
+  }
+  .content-tabs {
+    width: 1250px;
+    display: flex;
+    overflow: hidden;
+    .content {
+      background: #fff;
+      display: none;
+      width: 100%;
+      height: 100%;
+      
+      .answer {
+        display: none;
+      }
+    }
+    
+    .active-content {
+      display: block;
+    }
+    .active-content .question {
+      height: 63px;
+      overflow: hidden;
+      border-bottom: 1px solid #d8d8d8;
+      .title {
+        padding: 18px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        // background: #f7f7f7;
+
+        >h3 {
+          font-family: "Noto Sans KR", sans-serif;
+          font-weight: 400;
+          font-size: 1.2rem;
+        }
+        .icon {
+          margin: 0;
+        }
+      }
+      .answer {
+        display: block;
+      }
+    }
+    .active-title {
+      padding: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      border-bottom: 1px solid #d8d8d8;
+      background: #f7f7f7;
+      
+      >h3 {
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 400;
+        font-size: 1.2rem;
+      }
+
+      .icon {
+        margin: 0;
+      }
+  
+    }
+    .active-answer {
+      >p {
+        padding: 18px;
+        color: #636363;
+        border-bottom: 1px solid #d8d8d8;
+        font-family: "Noto Sans KR", sans-serif;
+        >strong {
+          color: #000;
+        }
+      }
+
+      &:nth-last-child(1) {
+        >p {
+         border-bottom: none; 
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .container {
+    .content-tabs {
+      width: 100%;
+
+      .active-content .question {
+        .title {
+          >h3 {
+            font-size: 1rem;
+          }
+        }
+      }
+      .active-title {
+        >h3 {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

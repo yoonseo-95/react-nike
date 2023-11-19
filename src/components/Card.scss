@@ -1,0 +1,225 @@
+.card-wrap {
+  width: 100%;
+  .card-txt {
+    width: 1250px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 75px;
+    position: relative;
+    .bg_txt1 {
+      font-size: 9rem;
+      letter-spacing: 45px;
+      font-weight: 800;
+      color: #f0f0f0;
+      position: absolute;
+      z-index: -1;
+      top: -43px;
+    }
+    > h3 {
+      font-size: 4rem;
+      font-weight: 800;
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+    .card-list {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 56px;
+      margin-top: 100px;
+      > li {
+        text-align: center;
+        > .btn {
+          border-radius: 15px;
+          width: 80px;
+          height: 29px;
+          font-size: 0.8rem;
+          background-color: #fff;
+          border: none;
+          color: #000;
+          cursor: pointer;
+          font-weight: 400;
+          font-family: "Roboto", sans-serif;
+          letter-spacing: 1px;
+          transition: 0.5s;
+          border: 2px solid #000;
+
+          &:hover {
+            background: #000;
+            color: #fff;
+          }
+
+          // .btn.h {
+          //   border-radius: 15px;
+          //   width: 80px;
+          //   height: 29px;
+          //   font-size: 0.8rem;
+          //   background-color: #000;
+          //   border: none;
+          //   color: #fff;
+          //   cursor: pointer;
+          //   font-weight: 400;
+          //   font-family: "Roboto", sans-serif;
+          //   letter-spacing: 1px;
+          //   transition: 0.5s;
+          // }
+        }
+      }
+    }
+  }
+  .card {
+    width: 1250px;
+    transition: 0.5s;
+    > ul {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 24px;
+      > li {
+        position: relative;
+        width: 294px;
+        height: 424px;
+        background: #f3f3f3;
+        overflow: hidden;
+        cursor: pointer;
+
+        &:nth-child(4) {
+          margin-right: 0;
+        }
+        &:nth-child(8) {
+          margin-right: 0;
+        }
+
+        .txtBox {
+          display: flex;
+          position: absolute;
+          top: 307px;
+          padding: 0 25px;
+          box-sizing: border-box;
+
+          .title {
+            width: 172px;
+            line-height: 24px;
+            margin: 0;
+            font-family: "Noto Sans KR", sans-serif;
+            .subTxt {
+              font-size: 0.9rem;
+              color: #6d6d6d;
+              font-family: "Noto Sans KR", sans-serif;
+            }
+            .review {
+              color: #feca34;
+            }
+          }
+          .txt {
+            margin: 25px 0;
+            .price {
+              font-size: 0.9rem;
+              font-weight: 600;
+              font-family: "Noto Sans KR", sans-serif;
+            }
+          }
+        }
+        > img {
+          transition: 0.5s;
+        }
+        &:hover > img {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .card-wrap {
+    padding: 0 20px;
+    box-sizing: border-box;
+    .card-txt {
+      width: 100%;
+    }
+    .card {
+      width: 100%;
+      > ul {
+        > li {
+          width: 312px;
+          .txtBox {
+            .title {
+              width: 198px;
+            }
+            .txt {
+              .price {
+                font-size: 0.8rem;
+              }
+            }
+          }
+          > img {
+            width: 312px;
+          }
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 768px) {
+  .card-wrap {
+    .card-txt {
+      .bg_txt1 {
+        font-size: 5.8rem;
+      }
+    }
+    .card {
+      > ul {
+        > li {
+          width: 352px;
+          .txtBox {
+            .title {
+              width: 221px;
+              > h4 {
+                font-size: 1.2rem;
+              }
+            }
+            .txt {
+              .price {
+                font-size: 1rem;
+              }
+            }
+          }
+          > img {
+            width: 340px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 425px) {
+  .card-wrap {
+    .card {
+      > ul {
+        > li {
+          width: 100%;
+          .txtBox {
+            .title {
+              > h4 {
+                font-size: 1.2rem;
+              }
+            }
+            .txt {
+              .price {
+                font-size: 1rem;
+              }
+            }
+          }
+          > img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,209 @@
+.TrendingWrap {
+  width: 100%;
+  .trending-txt {
+    width: 1250px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-bottom: 134px;
+    .bg_txt2 {
+      font-size: 9rem;
+      letter-spacing: 45px;
+      font-weight: 800;
+      color: #f0f0f0;
+      position: absolute;
+      z-index: -1;
+      top: -43px;
+      margin-left: 35px;
+    }
+    > h3 {
+      font-size: 4rem;
+      font-weight: 800;
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .trending {
+    width: 1250px;
+    .banner1 {
+      width: 100%;
+      height: 533px;
+      background: url("../../public/images/b_1.jpg") center center / cover
+        no-repeat;
+      margin-bottom: 22px;
+      .banner1-txt {
+        padding-top: 147px;
+        margin-left: 54px;
+        box-sizing: border-box;
+        > h2 {
+          font-size: 2.5rem;
+          color: #fff;
+          font-family: "Noto Sans KR", sans-serif;
+          font-weight: 800;
+          margin-bottom: 22px;
+        }
+        > p {
+          font-size: 1rem;
+          color: #fff;
+          font-family: "Noto Sans KR", sans-serif;
+          font-weight: 300;
+          line-height: 1.8rem;
+          margin-bottom: 34px;
+        }
+        > button {
+          width: 113px;
+          height: 48px;
+          background: #19262f;
+          cursor: pointer;
+          border: 1px solid #fff;
+          transition: 0.5s;
+          > a {
+            font-family: "Noto Sans KR", sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            color: #fff;
+          }
+          &:hover {
+            background: #fff;
+          }
+          &:hover > a {
+            color: #19262f;
+          }
+        }
+      }
+    }
+    .bannerWrap {
+      display: flex;
+      justify-content: space-between;
+      .banner2 {
+        width: 612px;
+        height: 315px;
+        margin: 0;
+        background: url("../../public/images/b_2.png") center center / cover
+          no-repeat;
+        .banner2-txt {
+          padding-top: 60px;
+          padding-left: 55px;
+
+          > h2 {
+            font-family: "Noto Sans KR", sans-serif;
+            color: #fff;
+            font-size: 1.4rem;
+            margin-bottom: 13px;
+          }
+          > p {
+            font-family: "Noto Sans KR", sans-serif;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.8rem;
+            margin-bottom: 24px;
+          }
+          > button {
+            width: 100px;
+            height: 43px;
+            background: #31342f;
+            cursor: pointer;
+            border: 1px solid #fff;
+            transition: 0.5s;
+            > a {
+              font-family: "Noto Sans KR", sans-serif;
+              font-weight: 500;
+              font-size: 1rem;
+              color: #fff;
+            }
+            &:hover {
+              background: #fff;
+            }
+            &:hover > a {
+              color: #19262f;
+            }
+          }
+        }
+      }
+      .banner3 {
+        width: 612px;
+        height: 315px;
+        margin: 0;
+        background: url("../../public/images/b_3.jpg") center center / cover
+          no-repeat;
+
+        .banner3-txt {
+          padding-top: 60px;
+          padding-left: 55px;
+          > h2 {
+            font-family: "Noto Sans KR", sans-serif;
+            color: #252524;
+            font-size: 1.4rem;
+            margin-bottom: 13px;
+          }
+          > p {
+            font-family: "Noto Sans KR", sans-serif;
+            color: #252524;
+            font-size: 1rem;
+            font-weight: 300;
+            line-height: 1.8rem;
+            margin-bottom: 24px;
+          }
+          > button {
+            width: 100px;
+            height: 43px;
+            background: #cbc9c6;
+            cursor: pointer;
+            border: 1px solid #252524;
+            transition: 0.5s;
+            > a {
+              font-family: "Noto Sans KR", sans-serif;
+              font-weight: 500;
+              font-size: 1rem;
+              color: #252524;
+            }
+            &:hover {
+              background: #252524;
+            }
+            &:hover > a {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .TrendingWrap {
+    padding: 0 20px;
+    box-sizing: border-box;
+    .trending-txt {
+      width: 100%;
+    }
+    .trending {
+      width: 100%;
+
+      .bannerWrap {
+        gap: 20px;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+  .TrendingWrap {
+    .trending {
+      .bannerWrap {
+        flex-wrap: wrap;
+        .banner2 {
+          width: 100%;
+        }
+        .banner3 {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

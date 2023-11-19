@@ -1,0 +1,150 @@
+{
+  "results": [
+    {
+      "category_id": 1,
+      "category_name": "신규 및 추천",
+      "sub_categories": [
+        {
+          "sub_category_id": "1",
+          "sub_category_name": "신제품 전체보기"
+        },
+        {
+          "sub_category_id": "2",
+          "sub_category_name": "신발"
+        },
+        {
+          "sub_category_id": "3",
+          "sub_category_name": "남성 신제품"
+        },
+        {
+          "sub_category_id": "4",
+          "sub_category_name": "여성 신제품"
+        },
+        {
+          "sub_category_id": "5",
+          "sub_category_name": "키즈 신제품"
+        }
+      ]
+    },
+    {
+      "category_id": 2,
+      "category_name": "남성 상품",
+      "sub_categories": [
+        {
+          "sub_category_id": "6",
+          "sub_category_name": "베스트셀러"
+        },
+        {
+          "sub_category_id": "7",
+          "sub_category_name": "Y2K 컬렉션"
+        },
+        {
+          "sub_category_id": "8",
+          "sub_category_name": "나이키 가을 에센셜"
+        },
+        {
+          "sub_category_id": "9",
+          "sub_category_name": "의류"
+        },
+        {
+          "sub_category_id": "10",
+          "sub_category_name": "용품"
+        },
+        {
+          "sub_category_id": "11",
+          "sub_category_name": "쇼핑 컬렉션"
+        }
+      ]
+    },
+    {
+      "category_id": 3,
+      "category_name": "여성 상품",
+      "sub_categories": [
+        {
+          "sub_category_id": "12",
+          "sub_category_name": "신제품 전체보기"
+        },
+        {
+          "sub_category_id": "13",
+          "sub_category_name": "베스트셀러"
+        },
+        {
+          "sub_category_id": "14",
+          "sub_category_name": "신발"
+        },
+        {
+          "sub_category_id": "15",
+          "sub_category_name": "의류"
+        },
+        {
+          "sub_category_id": "16",
+          "sub_category_name": "용품"
+        },
+        {
+          "sub_category_id": "17",
+          "sub_category_name": "쇼핑 컬렉션"
+        }
+      ]
+    },
+    {
+      "category_id": 4,
+      "category_name": "키즈 상품",
+      "sub_categories": [
+        {
+          "sub_category_id": "18",
+          "sub_category_name": "나이키 패밀리룩 아이템"
+        },
+        {
+          "sub_category_id": "19",
+          "sub_category_name": "베스트셀러"
+        },
+        {
+          "sub_category_id": "20",
+          "sub_category_name": "신발"
+        },
+        {
+          "sub_category_id": "21",
+          "sub_category_name": "의류"
+        },
+        {
+          "sub_category_id": "22",
+          "sub_category_name": "용품"
+        },
+        {
+          "sub_category_id": "23",
+          "sub_category_name": "쇼핑 컬렉션"
+        }
+      ]
+    },
+    {
+      "category_id": 5,
+      "category_name": "세일 상품",
+      "sub_categories": [
+        {
+          "sub_category_id": "24",
+          "sub_category_name": "남성 세일"
+        },
+        {
+          "sub_category_id": "25",
+          "sub_category_name": "여성 세일"
+        },
+        {
+          "sub_category_id": "26",
+          "sub_category_name": "키즈 세일"
+        },
+        {
+          "sub_category_id": "27",
+          "sub_category_name": "의류"
+        },
+        {
+          "sub_category_id": "28",
+          "sub_category_name": "용품"
+        },
+        {
+          "sub_category_id": "29",
+          "sub_category_name": "10만원 이하"
+        }
+      ]
+    }
+  ]
+}
