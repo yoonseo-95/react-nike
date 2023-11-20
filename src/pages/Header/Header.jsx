@@ -4,10 +4,7 @@ import {
   IoCartOutline,
   IoAddCircleOutline,
   IoHeartOutline,
-  IoMenu,
   IoSearchOutline,
-  IoHeart,
-  IoCart,
 } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import NAV from "./data/Nav";

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Map.scss";
 import { SlLocationPin, SlPaperPlane, SlEarphonesAlt } from "react-icons/sl";
 import { MapMarker, Map } from "react-kakao-maps-sdk";
-import mapimg from "../images/map_logo.png";
+import mapImg from "../images/map_logo.png";
 import { Link } from "react-router-dom";
 
 export default function BasicMap() {
@@ -94,7 +94,7 @@ export default function BasicMap() {
               position={marker.position}
               onClick={() => setInfo(marker)}
               image={{
-                src: mapimg,
+                src: mapImg,
                 size: {
                   width: 30,
                   height: 35,
