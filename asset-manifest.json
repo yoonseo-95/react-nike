@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-nike/static/css/main.265384ea.css",
-    "main.js": "/react-nike/static/js/main.b5d4b478.js",
+    "main.css": "/react-nike/static/css/main.b49f4ed2.css",
+    "main.js": "/react-nike/static/js/main.3ed0d361.js",
     "static/js/787.488b4793.chunk.js": "/react-nike/static/js/787.488b4793.chunk.js",
     "static/media/sport1.jpg": "/react-nike/static/media/sport1.cd7ab1c6c312353dbdf9.jpg",
     "static/media/sport8.jpg": "/react-nike/static/media/sport8.fba3549f3379162ade31.jpg",
@@ -18,12 +18,12 @@
     "static/media/sport3.jpg": "/react-nike/static/media/sport3.9d87726542c41c68d6f2.jpg",
     "static/media/detail_3_1.jpg": "/react-nike/static/media/detail_3_1.097d200934639fcbb6a9.jpg",
     "static/media/detail_4.jpg": "/react-nike/static/media/detail_4.1704f45d19f07d3e6ac7.jpg",
-    "static/media/banner2_2.jpg": "/react-nike/static/media/banner2_2.93f851058910ce6d777d.jpg",
-    "static/media/banner1_1.jpg": "/react-nike/static/media/banner1_1.44a3fa11e14edf924513.jpg",
-    "static/media/banner2.jpg": "/react-nike/static/media/banner2.f27fc64ff8704137351b.jpg",
-    "static/media/banner1.jpg": "/react-nike/static/media/banner1.6ab4503a19632cb956d0.jpg",
-    "static/media/banner3_3.jpg": "/react-nike/static/media/banner3_3.d4038622a4a8f74e506a.jpg",
-    "static/media/banner3.jpg": "/react-nike/static/media/banner3.36554f3f52cc2cccde45.jpg",
+    "static/media/banner2_2.jpg": "/react-nike/static/media/banner2_2.db36472a45c6396dd844.jpg",
+    "static/media/banner1_1.jpg": "/react-nike/static/media/banner1_1.fbb0d693edf5868b375e.jpg",
+    "static/media/banner2.jpg": "/react-nike/static/media/banner2.5191096bd7b1efef1610.jpg",
+    "static/media/banner1.jpg": "/react-nike/static/media/banner1.26c937e5bf2e80e8c35c.jpg",
+    "static/media/banner3_3.jpg": "/react-nike/static/media/banner3_3.786cc0cdad6374cbc4ab.jpg",
+    "static/media/banner3.jpg": "/react-nike/static/media/banner3.a2e344fda85be1fd2818.jpg",
     "static/media/products_banner.jpg": "/react-nike/static/media/products_banner.b914538996d397604aa2.jpg",
     "static/media/b_1.jpg": "/react-nike/static/media/b_1.7f9c163f73cb360a759e.jpg",
     "static/media/b_2.png": "/react-nike/static/media/b_2.1e5f2121f5ba43bb8ce0.png",
@@ -32,12 +32,12 @@
     "static/media/google_logo.png": "/react-nike/static/media/google_logo.022678459fe8f77aabf7.png",
     "static/media/footer_logo1.png": "/react-nike/static/media/footer_logo1.9561aeecfb19f2270b86.png",
     "index.html": "/react-nike/index.html",
-    "main.265384ea.css.map": "/react-nike/static/css/main.265384ea.css.map",
-    "main.b5d4b478.js.map": "/react-nike/static/js/main.b5d4b478.js.map",
+    "main.b49f4ed2.css.map": "/react-nike/static/css/main.b49f4ed2.css.map",
+    "main.3ed0d361.js.map": "/react-nike/static/js/main.3ed0d361.js.map",
     "787.488b4793.chunk.js.map": "/react-nike/static/js/787.488b4793.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.265384ea.css",
-    "static/js/main.b5d4b478.js"
+    "static/css/main.b49f4ed2.css",
+    "static/js/main.3ed0d361.js"
   ]
 }
