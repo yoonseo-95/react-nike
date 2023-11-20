@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Main.scss";
 
 export default function Main() {
-  const [isBanner1Active, setBanner1IsActive] = useState(false);
+  const [isBanner1Active, setBanner1IsActive] = useState(1);
   const [isBanner2Active, setBanner2IsActive] = useState(false);
   const [isBanner3Active, setBanner3IsActive] = useState(false);
 
@@ -18,22 +18,19 @@ export default function Main() {
   };
 
   const handleMouseLeave1 = () => {
-    setBanner1IsActive(false);
+    setBanner1IsActive(true);
     setBox1(false);
     setBox2(false);
-    // setTxtPoint("NIKE");
-    // setPtxt("사계절을 나이키와 나이키만의 스타일로 하루를 시작하세요.");
   };
   const handleMouseEnter2 = () => {
     setBanner2IsActive(true);
+    setBanner1IsActive(false);
     setTxtPoint("AIR");
     setPtxt("컬러 포인트를 강조한 세련된 런닝화를 만나보세요.");
   };
   const handleMouseLeave2 = () => {
     setBanner2IsActive(false);
     setBox3(false);
-    // setTxtPoint("NIKE");
-    // setPtxt("사계절을 나이키와 나이키만의 스타일로 하루를 시작하세요.");
   };
   const handleMouseEnter3 = () => {
     setBanner3IsActive(true);
@@ -42,6 +39,7 @@ export default function Main() {
   };
   const handleMouseLeave3 = () => {
     setBanner3IsActive(false);
+    setBanner1IsActive(true);
     setBox4(false);
     setBox5(false);
     setTxtPoint("NIKE");
@@ -77,16 +75,11 @@ export default function Main() {
             <p>{ptxt}</p>
             <button>More</button>
           </div>
-          {/* <div className="txt txt1">
-            <h3>Air Jordan 1 low</h3>
-            <p>블랙&화이트의 포인트가 매력적인 클래식한 감성을 만나보세요.</p>
-            <button>More</button>
-          </div> */}
         </div>
         <div className="product_wrap">
           <div
             className={`banner1 banner ${isBanner1Active ? "active" : ""}`}
-            onClick={handleMouseEnter1}
+            onMouseEnter={handleMouseEnter1}
             onMouseLeave={handleMouseLeave1}
           >
             <span
@@ -106,7 +99,7 @@ export default function Main() {
           </div>
           <div
             className={`banner2 banner ${isBanner2Active ? "active" : ""}`}
-            onClick={handleMouseEnter2}
+            onMouseEnter={handleMouseEnter2}
             onMouseLeave={handleMouseLeave2}
           >
             <span
@@ -119,7 +112,7 @@ export default function Main() {
           </div>
           <div
             className={`banner3 banner ${isBanner3Active ? "active" : ""}`}
-            onClick={handleMouseEnter3}
+            onMouseEnter={handleMouseEnter3}
             onMouseLeave={handleMouseLeave3}
           >
             <span
