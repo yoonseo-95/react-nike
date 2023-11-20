@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./Map.scss";
 import { SlLocationPin, SlPaperPlane, SlEarphonesAlt } from "react-icons/sl";
 import { MapMarker, Map } from "react-kakao-maps-sdk";
