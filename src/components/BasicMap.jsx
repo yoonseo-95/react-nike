@@ -1,55 +1,55 @@
 import React, { useEffect, useState } from "react";
 import "./Map.scss";
 import { SlLocationPin, SlPaperPlane, SlEarphonesAlt } from "react-icons/sl";
-// import { MapMarker, Map } from "react-kakao-maps-sdk";
-// import mapImg from "../images/map_logo.png";
+import { MapMarker, Map } from "react-kakao-maps-sdk";
+import mapImg from "../images/map_logo.png";
 import { Link } from "react-router-dom";
 
 export default function BasicMap() {
-  // const { kakao } = window;
-  // const [info, setInfo] = useState();
-  // const [markers, setMarkers] = useState([]);
-  // const [map, setMap] = useState();
-  // const [location, setLocation] = useState(null);
+  const { kakao } = window;
+  const [info, setInfo] = useState();
+  const [markers, setMarkers] = useState([]);
+  const [map, setMap] = useState();
+  const [location, setLocation] = useState(null);
 
-  // useEffect(() => {
-  //   navigator.geolocation.getCurrentPosition(successHandler, errorHandler);
-  // }, []);
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(successHandler, errorHandler);
+  }, []);
 
-  // const successHandler = (response) => {
-  //   const { latitude, longitude } = response.coords;
-  //   setLocation({ latitude, longitude });
-  // };
+  const successHandler = (response) => {
+    const { latitude, longitude } = response.coords;
+    setLocation({ latitude, longitude });
+  };
 
-  // const errorHandler = (error) => {
-  //   console.log(error);
-  // };
-  // // const currentCoordinate = await getCurrentCoordinate();
-  // useEffect(() => {
-  //   if (!map) return;
-  //   const ps = new kakao.maps.services.Places();
+  const errorHandler = (error) => {
+    console.log(error);
+  };
+  // const currentCoordinate = await getCurrentCoordinate();
+  useEffect(() => {
+    if (!map) return;
+    const ps = new kakao.maps.services.Places();
 
-  //   ps.keywordSearch("서울 나이키", (data, status, _pagination) => {
-  //     if (status === kakao.maps.services.Status.OK) {
-  //       const bounds = new kakao.maps.LatLngBounds();
-  //       let markers = [];
+    ps.keywordSearch("서울 나이키", (data, status, _pagination) => {
+      if (status === kakao.maps.services.Status.OK) {
+        const bounds = new kakao.maps.LatLngBounds();
+        let markers = [];
 
-  //       for (let i = 0; i < data.length; i++) {
-  //         markers.push({
-  //           position: {
-  //             lat: data[i].y,
-  //             lng: data[i].x,
-  //           },
-  //           content: data[i].place_name,
-  //         });
-  //         bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
-  //       }
-  //       setMarkers(markers);
+        for (let i = 0; i < data.length; i++) {
+          markers.push({
+            position: {
+              lat: data[i].y,
+              lng: data[i].x,
+            },
+            content: data[i].place_name,
+          });
+          bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
+        }
+        setMarkers(markers);
 
-  //       map.setBounds(bounds);
-  //     }
-  //   });
-  // }, [map]);
+        map.setBounds(bounds);
+      }
+    });
+  }, [map]);
 
   return (
     <section className="content">
@@ -74,7 +74,7 @@ export default function BasicMap() {
           </Link>
         </div>
       </div>
-      {/* 
+
       {location && (
         <Map
           center={{
@@ -113,7 +113,7 @@ export default function BasicMap() {
             </MapMarker>
           ))}
         </Map>
-      )} */}
+      )}
     </section>
   );
 }
