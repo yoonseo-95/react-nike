@@ -15,7 +15,7 @@ import ProtectedRoute from "./pages/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
-    path: "/renewal-nike/",
+    path: "/",
     element: <App />,
     errorElement: <NotFound />,
     children: [
