@@ -11,19 +11,6 @@ import NAV from "./data/Nav";
 import User from "../../components/User";
 
 export default function Header({ user, handleLogout }) {
-  useEffect(() => {
-    fetch("/data/categories.json", {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setPageCategories(data.results);
-      });
-  }, []);
-
   const [scrollPosition, setScrollPosition] = useState(0);
   const updateScroll = () => {
     setScrollPosition(window.scrollY || document.documentElement.scrollTop);
@@ -32,23 +19,10 @@ export default function Header({ user, handleLogout }) {
     window.addEventListener("scroll", updateScroll);
   });
 
-  const [pageCategories, setPageCategories] = useState([]);
-  const [visible, setVisible] = useState(false);
-  const menuVisible = (visible) => {
-    setVisible(!visible);
-  };
-
-  // 북마크
-
-  // const [iconChange, setIconChange] = useState(true);
-  // const bookmarkOnClick = () => {
-  //   setIconChange(!iconChange);
-  // };
-
   return (
     <header className={scrollPosition < 20 ? "header" : "header-color"}>
       <span className="b"></span>
-      <div className="headerWrap" onMouseLeave={() => menuVisible(true)}>
+      <div className="headerWrap">
         <h1 className="logo">
           <Link
             to="/"
@@ -61,15 +35,8 @@ export default function Header({ user, handleLogout }) {
         </h1>
         <ul className="gnb">
           {NAV.map((menu) => {
-            const isMenu = !(menu === "제품");
             return (
-              <li
-                className="list"
-                key={menu.id}
-                onMouseEnter={() => {
-                  menuVisible(!isMenu);
-                }}
-              >
+              <li className="list" key={menu.id}>
                 <Link
                   to={`/products?category=${menu.id}`}
                   className={scrollPosition < 20 ? "" : "color"}
@@ -140,43 +107,6 @@ export default function Header({ user, handleLogout }) {
             <IoMenu />
           </li> */}
         </ul>
-        {visible && (
-          <div className="subWrap">
-            <div className="sub">
-              <div className="subUL">
-                {pageCategories.map((subMenu) => {
-                  return (
-                    <ul className="subGnb" key={subMenu.category_id}>
-                      <li className="subTitle" key={subMenu.category_id}>
-                        <h2 className="title">{subMenu.category_name}</h2>
-                        {subMenu.sub_categories.map((sub) => {
-                          return (
-                            <ul className="subList" key={sub.sub_category_id}>
-                              <li key={sub.sub_category_id}>
-                                <Link
-                                  to={`/products?category=${sub.sub_category_id}`}
-                                >
-                                  {sub.sub_category_name}
-                                </Link>
-                              </li>
-                            </ul>
-                          );
-                        })}
-                      </li>
-                    </ul>
-                  );
-                })}
-              </div>
-
-              <div className="bannerWrap">
-                <div className="banner"></div>
-                <Link to="/">
-                  <p>SEE ALL PRODUCTS</p>
-                </Link>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </header>
   );
