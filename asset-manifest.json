@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/react-nike/static/css/main.a610c059.css",
-    "main.js": "/react-nike/static/js/main.81e2efea.js",
+    "main.css": "/react-nike/static/css/main.3f2e9dc6.css",
+    "main.js": "/react-nike/static/js/main.cdc71ce9.js",
     "static/js/787.488b4793.chunk.js": "/react-nike/static/js/787.488b4793.chunk.js",
     "static/media/sport1.jpg": "/react-nike/static/media/sport1.cd7ab1c6c312353dbdf9.jpg",
     "static/media/sport8.jpg": "/react-nike/static/media/sport8.fba3549f3379162ade31.jpg",
+    "static/media/sport3.jpg": "/react-nike/static/media/sport3.e024417d6e8dec5c91a6.jpg",
     "static/media/sport7.jpg": "/react-nike/static/media/sport7.e8c388f23f6a82947dd3.jpg",
     "static/media/sport4.jpg": "/react-nike/static/media/sport4.61c4b0ace585d294cef0.jpg",
     "static/media/sport10.jpg": "/react-nike/static/media/sport10.f6294a60823175b6bffd.jpg",
@@ -14,7 +15,6 @@
     "static/media/sport5.jpg": "/react-nike/static/media/sport5.f36777e6ae71f765010c.jpg",
     "static/media/detail_2.jpg": "/react-nike/static/media/detail_2.c611e30b6b54a5dbf8fa.jpg",
     "static/media/detail_1.jpg": "/react-nike/static/media/detail_1.b6fae7091d3c855e6d5e.jpg",
-    "static/media/sport3.jpg": "/react-nike/static/media/sport3.9d87726542c41c68d6f2.jpg",
     "static/media/detail_3_1.jpg": "/react-nike/static/media/detail_3_1.097d200934639fcbb6a9.jpg",
     "static/media/detail_4.jpg": "/react-nike/static/media/detail_4.1704f45d19f07d3e6ac7.jpg",
     "static/media/banner2_2.jpg": "/react-nike/static/media/banner2_2.db36472a45c6396dd844.jpg",
@@ -31,12 +31,12 @@
     "static/media/google_logo.png": "/react-nike/static/media/google_logo.022678459fe8f77aabf7.png",
     "static/media/footer_logo1.png": "/react-nike/static/media/footer_logo1.9561aeecfb19f2270b86.png",
     "index.html": "/react-nike/index.html",
-    "main.a610c059.css.map": "/react-nike/static/css/main.a610c059.css.map",
-    "main.81e2efea.js.map": "/react-nike/static/js/main.81e2efea.js.map",
+    "main.3f2e9dc6.css.map": "/react-nike/static/css/main.3f2e9dc6.css.map",
+    "main.cdc71ce9.js.map": "/react-nike/static/js/main.cdc71ce9.js.map",
     "787.488b4793.chunk.js.map": "/react-nike/static/js/787.488b4793.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a610c059.css",
-    "static/js/main.81e2efea.js"
+    "static/css/main.3f2e9dc6.css",
+    "static/js/main.cdc71ce9.js"
   ]
 }
