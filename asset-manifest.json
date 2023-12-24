@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-nike/static/css/main.676eb981.css",
-    "main.js": "/react-nike/static/js/main.c3149f8e.js",
+    "main.css": "/react-nike/static/css/main.67a6205f.css",
+    "main.js": "/react-nike/static/js/main.d1f5ca7e.js",
     "static/js/787.488b4793.chunk.js": "/react-nike/static/js/787.488b4793.chunk.js",
     "static/media/nike.mp4": "/react-nike/static/media/nike.50007e92e2d850f15531.mp4",
     "static/media/sport1.jpg": "/react-nike/static/media/sport1.cd7ab1c6c312353dbdf9.jpg",
@@ -12,12 +12,12 @@
     "static/media/google_logo.png": "/react-nike/static/media/google_logo.022678459fe8f77aabf7.png",
     "static/media/footer_logo1.png": "/react-nike/static/media/footer_logo1.9561aeecfb19f2270b86.png",
     "index.html": "/react-nike/index.html",
-    "main.676eb981.css.map": "/react-nike/static/css/main.676eb981.css.map",
-    "main.c3149f8e.js.map": "/react-nike/static/js/main.c3149f8e.js.map",
+    "main.67a6205f.css.map": "/react-nike/static/css/main.67a6205f.css.map",
+    "main.d1f5ca7e.js.map": "/react-nike/static/js/main.d1f5ca7e.js.map",
     "787.488b4793.chunk.js.map": "/react-nike/static/js/787.488b4793.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.676eb981.css",
-    "static/js/main.c3149f8e.js"
+    "static/css/main.67a6205f.css",
+    "static/js/main.d1f5ca7e.js"
   ]
 }
