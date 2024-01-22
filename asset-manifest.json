@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-nike/static/css/main.a48c4b9d.css",
-    "main.js": "/react-nike/static/js/main.65396b14.js",
+    "main.js": "/react-nike/static/js/main.149c409d.js",
     "static/js/787.488b4793.chunk.js": "/react-nike/static/js/787.488b4793.chunk.js",
     "static/media/nike.mp4": "/react-nike/static/media/nike.50007e92e2d850f15531.mp4",
     "static/media/sport1.jpg": "/react-nike/static/media/sport1.cd7ab1c6c312353dbdf9.jpg",
@@ -15,11 +15,11 @@
     "static/media/footer_logo1.png": "/react-nike/static/media/footer_logo1.9561aeecfb19f2270b86.png",
     "index.html": "/react-nike/index.html",
     "main.a48c4b9d.css.map": "/react-nike/static/css/main.a48c4b9d.css.map",
-    "main.65396b14.js.map": "/react-nike/static/js/main.65396b14.js.map",
+    "main.149c409d.js.map": "/react-nike/static/js/main.149c409d.js.map",
     "787.488b4793.chunk.js.map": "/react-nike/static/js/787.488b4793.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a48c4b9d.css",
-    "static/js/main.65396b14.js"
+    "static/js/main.149c409d.js"
   ]
 }
