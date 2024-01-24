@@ -1,142 +1,61 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Main.scss";
+import { Link } from "react-router-dom";
+import MainVideo from "../../videos/nike.mp4";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Main() {
-  const [isBanner1Active, setBanner1IsActive] = useState(false);
-  const [isBanner2Active, setBanner2IsActive] = useState(false);
-  const [isBanner3Active, setBanner3IsActive] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef();
 
-  const [txtPoint, setTxtPoint] = useState("NIKE");
-  const [ptxt, setPtxt] = useState(
-    "사계절을 나이키와 나이키만의 스타일로 하루를 시작하세요."
-  );
-
-  const handleMouseEnter1 = () => {
-    setBanner1IsActive(true);
-    setTxtPoint("JORDAN");
-    setPtxt("블랙&화이트의 오리지널 감성의 조던을 만나보세요");
+  const handleMouseEnter = () => {
+    if (videoRef.current && !isPlaying) {
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            setIsPlaying(true);
+          })
+          .catch((error) => {
+            console.log("동영상 재생하는 중 오류가 발생했습니다.:", error);
+          });
+      }
+    }
   };
-
-  const handleMouseLeave1 = () => {
-    setBanner1IsActive(false);
-    setBox1(false);
-    setBox2(false);
-    // setTxtPoint("NIKE");
-    // setPtxt("사계절을 나이키와 나이키만의 스타일로 하루를 시작하세요.");
+  const handleMouseLeave = () => {
+    if (videoRef.current && isPlaying) {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    }
   };
-  const handleMouseEnter2 = () => {
-    setBanner2IsActive(true);
-    setTxtPoint("AIR");
-    setPtxt("컬러 포인트를 강조한 세련된 런닝화를 만나보세요.");
-  };
-  const handleMouseLeave2 = () => {
-    setBanner2IsActive(false);
-    setBox3(false);
-    // setTxtPoint("NIKE");
-    // setPtxt("사계절을 나이키와 나이키만의 스타일로 하루를 시작하세요.");
-  };
-  const handleMouseEnter3 = () => {
-    setBanner3IsActive(true);
-    setTxtPoint("FORCE");
-    setPtxt("새로운 컬러감과 디자인을 만나보세요.");
-  };
-  const handleMouseLeave3 = () => {
-    setBanner3IsActive(false);
-    setBox4(false);
-    setBox5(false);
-    setTxtPoint("NIKE");
-  };
-  const [box1, setBox1] = useState(false);
-  const handleClick = () => {
-    setBox1(!box1);
-  };
-  const [box2, setBox2] = useState(false);
-  const handleClick2 = () => {
-    setBox2(!box2);
-  };
-  const [box3, setBox3] = useState(false);
-  const handleClick3 = () => {
-    setBox3(!box3);
-  };
-  const [box4, setBox4] = useState(false);
-  const handleClick4 = () => {
-    setBox4(!box4);
-  };
-  const [box5, setBox5] = useState(false);
-  const handleClick5 = () => {
-    setBox5(!box5);
-  };
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <main className="main">
+      <div className="product-wrap">
+        <video
+          ref={videoRef}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          muted
+          autoPlay
+          playsInline
+          className="video"
+        >
+          <source src={MainVideo} type="video/mp4" />
+        </video>
+      </div>
       <div className="mainWrap">
-        <div className="txt_wrap">
-          <div className="txt">
-            <h3>{txtPoint}</h3>
-            {/* <h3>Air Jordan 1 low</h3> */}
-            <p>{ptxt}</p>
-            <button>More</button>
+        <div className="txt">
+          <div className="txt_wrap">
+            <h3 className="txt-typing">JUST DO IT. NIKE</h3>
           </div>
-          {/* <div className="txt txt1">
-            <h3>Air Jordan 1 low</h3>
-            <p>블랙&화이트의 포인트가 매력적인 클래식한 감성을 만나보세요.</p>
-            <button>More</button>
-          </div> */}
-        </div>
-        <div className="product_wrap">
-          <div
-            className={`banner1 banner ${isBanner1Active ? "active" : ""}`}
-            onClick={handleMouseEnter1}
-            onMouseLeave={handleMouseLeave1}
-          >
-            <span
-              className={`detail ${isBanner1Active ? "active" : ""}`}
-              onMouseLeave={handleMouseLeave1}
-              onClick={handleClick}
-            >
-              +<div className={`box1 ${box1 ? "on" : ""}`}></div>
-            </span>
-            <span
-              className={`detail ${isBanner1Active ? "active" : ""}`}
-              onMouseLeave={handleMouseLeave1}
-              onClick={handleClick2}
-            >
-              +<div className={`box2 ${box2 ? "on" : ""}`}></div>
-            </span>
-          </div>
-          <div
-            className={`banner2 banner ${isBanner2Active ? "active" : ""}`}
-            onClick={handleMouseEnter2}
-            onMouseLeave={handleMouseLeave2}
-          >
-            <span
-              className={`detail detail3 ${isBanner2Active ? "active" : ""}`}
-              onMouseLeave={handleMouseLeave2}
-              onClick={handleClick3}
-            >
-              +<div className={`box3 ${box3 ? "on" : ""}`}></div>
-            </span>
-          </div>
-          <div
-            className={`banner3 banner ${isBanner3Active ? "active" : ""}`}
-            onClick={handleMouseEnter3}
-            onMouseLeave={handleMouseLeave3}
-          >
-            <span
-              className={`detail detail4 ${isBanner3Active ? "active" : ""}`}
-              onMouseLeave={handleMouseEnter3}
-              onClick={handleClick4}
-            >
-              +<div className={`box4 ${box4 ? "on" : ""}`}></div>
-            </span>
-            <span
-              className={`detail detail5 ${isBanner3Active ? "active" : ""}`}
-              onMouseLeave={handleMouseEnter3}
-              onClick={handleClick5}
-            >
-              +<div className={`box5 ${box5 ? "on" : ""}`}></div>
-            </span>
-          </div>
+          <Link to={`/products`}>
+            <span>Product More</span>
+          </Link>
         </div>
       </div>
     </main>

@@ -10,7 +10,7 @@ export default function BasicMap() {
       <div className="wrap">
         <div className="box1">
           <SlLocationPin className="icon" />
-          <h3>매장 문의</h3>
+          <h3>나이키 매장 문의</h3>
           <p>전지역 나이키 매장 위치를 확인하세요.</p>
         </div>
         <div className="box2">
@@ -23,8 +23,8 @@ export default function BasicMap() {
         <div className="box3">
           <SlEarphonesAlt className="icon" />
           <h3>고객센터 전화 문의</h3>
-          <Link to="tel:000-000-0000">
-            <p>000-000-0000</p>
+          <Link to="tel:080-022-0182">
+            <p>080-022-0182</p>
           </Link>
         </div>
       </div>

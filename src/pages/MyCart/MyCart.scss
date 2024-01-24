@@ -1,0 +1,859 @@
+.cartWrap {
+  padding-top: 300px;
+  width: 1250px;
+  .cartZero {
+    width: 100%;
+    text-align: center;
+    padding: 50px 0;
+    .icon {
+      font-size: 30px;
+    }
+    .txt {
+      line-height: 65px;
+      font-family: "Noto Sans KR";
+    }
+  }
+  h2 {
+    font-size: 24px;
+    font-family: "Noto Sans KR";
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #000;
+      margin-top: 100px;
+    }
+  }
+
+  .checkDiv {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    margin: 20px 0;
+    .allCheck {
+      width: 17px;
+      height: 17px;
+      margin: 20px 0;
+      cursor: pointer;
+    }
+    .allCheck-label {
+      font-family: "Noto Sans KR";
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+  .productUl {
+    display: flex;
+    border-bottom: 1px solid #dadada;
+    padding-bottom: 20px;
+    .box1 {
+      width: 655px;
+      margin: 0;
+      margin-left: 68px;
+
+      span {
+        font-family: "Noto Sans KR";
+        color: #a6a6a6;
+      }
+    }
+    .box2 {
+      width: 500px;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+
+      span {
+        font-family: "Noto Sans KR";
+        color: #a6a6a6;
+      }
+    }
+  }
+  .productList {
+    li {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 30px 0;
+      border-bottom: 1px solid #dadada;
+      box-sizing: border-box;
+
+      input.checkProduct {
+        content: "";
+        display: inline-block;
+        width: 17px;
+        height: 17px;
+        margin: 0;
+        margin-right: 50px;
+      }
+      img {
+        display: block;
+        width: 200px;
+        margin: 0;
+        margin-right: 50px;
+      }
+      .txt {
+        margin: 0;
+        width: 400px;
+        .title {
+          font-size: 20px;
+          font-family: "Noto Sans KR";
+          font-weight: 500;
+          color: #000;
+        }
+        .category {
+          font-size: 16px;
+          font-family: "Noto Sans KR";
+          font-weight: 500;
+          line-height: 40px;
+          color: #949494;
+        }
+        .txt2 {
+          display: flex;
+          align-items: center;
+          margin-top: 30px;
+          .quantity {
+            font-size: 15px;
+            font-family: "Noto Sans KR";
+            font-weight: 500;
+            line-height: 30px;
+            color: #949494;
+            margin-right: 15px;
+          }
+          .colorName {
+            font-size: 15px;
+            font-family: "Noto Sans KR";
+            font-weight: 500;
+            color: #949494;
+          }
+        }
+      }
+      .price {
+        font-size: 16px;
+        font-family: "Noto Sans KR";
+        font-weight: 500;
+        color: #000;
+        display: block;
+        width: 220px;
+      }
+      .quantityWrap {
+        margin: 0;
+        width: 85px;
+        display: flex;
+        height: 40px;
+        align-items: center;
+        margin-right: 155px;
+        .minus {
+          padding: 3px;
+          font-size: 8px;
+          display: block;
+          border: 1.5px solid #000;
+          border-radius: 50px;
+          cursor: pointer;
+        }
+        .quantity2 {
+          font-size: 18px;
+          font-family: "Noto Sans KR";
+        }
+        .plus {
+          padding: 3px;
+          font-size: 8px;
+          display: block;
+          border: 1.5px solid #000;
+          border-radius: 50px;
+          cursor: pointer;
+        }
+        .delete {
+          cursor: pointer;
+          font-size: 20px;
+        }
+      }
+      .btn-ul {
+        li {
+          border-top: 0;
+          padding: 8px;
+          border: 1px solid #dadada;
+          text-align: center;
+          margin-bottom: 10px;
+          &.on {
+            background: #000;
+          }
+          &.on a {
+            color: #fff;
+          }
+          a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            font-family: "Noto Sans KR";
+            font-size: 15px;
+            color: #000;
+          }
+
+          &:nth-child(3) {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  .priceCard {
+    width: 100%;
+    display: flex;
+    padding: 80px 20px;
+    box-sizing: border-box;
+    border-bottom: 2px solid #000;
+    align-items: center;
+
+    .icon {
+      font-size: 20px;
+    }
+    .priceCardWrap {
+      width: 400px;
+      margin: 0;
+      text-align: center;
+
+      .priceText {
+        font-size: 18px;
+        font-family: "Noto Sans KR";
+        font-weight: 500;
+        line-height: 33px;
+      }
+      .price {
+        font-size: 20px;
+        font-family: "Noto Sans KR";
+        font-weight: 600;
+      }
+    }
+  }
+  .btnWrap {
+    width: 640px;
+    padding-top: 50px;
+    box-sizing: border-box;
+    .button {
+      width: 200px;
+      height: 45px;
+      background: none;
+      border: 1px solid #b6b6b6;
+      cursor: pointer;
+      font-size: 15px;
+      line-height: 45px;
+      font-family: "Noto Sans KR";
+      font-weight: 500;
+      margin-right: 20px;
+
+      &:nth-last-child(1) {
+        margin-right: 0;
+      }
+
+      &.on {
+        background: #000;
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1024px) and (min-width: 900px) {
+  .cartWrap {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 300px;
+    box-sizing: border-box;
+
+    .productUl {
+      .box1 {
+        margin-left: 39px;
+        width: 50%;
+        margin-right: 20px;
+      }
+      .box2 {
+        width: 40%;
+      }
+    }
+
+    .productList {
+      li {
+        input.checkProduct {
+          width: 23px;
+          height: 23px;
+          margin-right: 24px;
+        }
+
+        .quantityWrap {
+          width: 170px;
+          margin-right: 65px;
+        }
+
+        .btn-ul {
+          .btn-li {
+            width: 100px;
+          }
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 900px) and (min-width: 768px) {
+  .cartWrap {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 300px;
+    box-sizing: border-box;
+
+    .productUl {
+      .box1 {
+        margin-left: 39px;
+        width: 54%;
+        margin-right: 20px;
+      }
+      .box2 {
+        width: 32%;
+      }
+    }
+
+    .productList {
+      li {
+        input.checkProduct {
+          width: 26px;
+          height: 26px;
+          margin-right: 24px;
+        }
+        img {
+          width: 144px;
+          margin-right: 20px;
+        }
+        .price {
+          width: 27%;
+          text-align: center;
+        }
+        .quantityWrap {
+          width: 24%;
+          margin-right: 0;
+        }
+
+        .btn-ul {
+          .btn-li {
+            width: 95px;
+          }
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 768px) and (min-width: 657px) {
+  .cartWrap {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 220px;
+    box-sizing: border-box;
+
+    .productUl {
+      .box1 {
+        margin-left: 39px;
+        width: 52%;
+        margin-right: 20px;
+      }
+      .box2 {
+        width: 32%;
+      }
+    }
+
+    .priceCard {
+      padding: 80px 0;
+      .icon {
+        font-size: 30px;
+      }
+    }
+
+    .productList {
+      li {
+        input.checkProduct {
+          width: 35px;
+          height: 35px;
+          margin-right: 24px;
+        }
+        .txt {
+          width: 50%;
+          padding-top: 0;
+          .title {
+            font-size: 18px;
+          }
+        }
+        img {
+          width: 144px;
+          margin-right: 20px;
+        }
+        .price {
+          width: 27%;
+          text-align: center;
+        }
+        .quantityWrap {
+          width: 24%;
+          margin-right: 0;
+        }
+
+        .btn-ul {
+          .btn-li {
+            width: 95px;
+          }
+        }
+      }
+    }
+    .btnWrap {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .button {
+        width: 30%;
+        margin: 0;
+      }
+    }
+  }
+}
+@media all and (max-width: 657px) and (min-width: 500px) {
+  .cartWrap {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 160px;
+    box-sizing: border-box;
+
+    .productUl {
+      .box1 {
+        margin-left: 39px;
+        width: 52%;
+        margin-right: 20px;
+      }
+      .box2 {
+        width: 32%;
+      }
+    }
+    .priceCard {
+      padding: 80px 0;
+      .icon {
+        font-size: 30px;
+      }
+      .priceCardWrap {
+        .priceText {
+          font-size: 16px;
+        }
+        .price {
+          font-size: 18px;
+        }
+      }
+    }
+    .productList {
+      li {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        input.checkProduct {
+          width: 18px;
+          height: 18px;
+          margin-right: 24px;
+        }
+        .txt {
+          width: 31%;
+          padding-top: 0;
+          .title {
+            font-size: 17px;
+          }
+          .category {
+            font-size: 14px;
+          }
+          .txt2 {
+            margin-top: 0;
+            .quantity {
+              font-size: 14px;
+            }
+            .colorName {
+              font-size: 14px;
+            }
+          }
+        }
+        img {
+          width: 20%;
+          margin-right: 20px;
+        }
+        .price {
+          width: 16%;
+          font-size: 14px;
+          text-align: center;
+        }
+        .quantityWrap {
+          width: 17%;
+          margin-right: 0;
+
+          .quantity2 {
+            font-size: 15px;
+          }
+        }
+
+        .btn-ul {
+          display: flex;
+          justify-content: space-around;
+          width: 70%;
+          gap: 10px;
+          margin: 20px auto;
+          margin-bottom: 0;
+          .btn-li {
+            width: 100%;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    .btnWrap {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .button {
+        width: 30%;
+        margin: 0;
+      }
+    }
+  }
+}
+@media all and (max-width: 500px) and (min-width: 425px) {
+  .cartWrap {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 240px;
+
+    box-sizing: border-box;
+
+    .productUl {
+      .box1 {
+        margin-left: 0;
+        width: 52%;
+        margin-right: 20px;
+      }
+      .box2 {
+        width: 43%;
+      }
+    }
+
+    .priceCard {
+      gap: 15px;
+      padding: 80px 0;
+      .icon {
+        font-size: 50px;
+      }
+      .priceCardWrap {
+        .priceText {
+          font-size: 16px;
+        }
+        .price {
+          font-size: 17px;
+        }
+      }
+    }
+    .productList {
+      li {
+        flex-direction: column;
+        gap: 20px;
+        position: relative;
+        input.checkProduct {
+          width: 19px;
+          height: 19px;
+          margin-right: 0;
+          position: absolute;
+          top: 64.1%;
+          left: 21%;
+        }
+        .txt {
+          width: 100%;
+          padding-top: 0;
+          text-align: center;
+
+          .title {
+            font-size: 22px;
+          }
+          .category {
+            font-size: 17px;
+          }
+          .txt2 {
+            margin-top: 0;
+            width: 100%;
+            justify-content: center;
+            .quantity {
+              font-size: 16px;
+              margin-right: 10px;
+            }
+            .colorName {
+              font-size: 16px;
+            }
+          }
+        }
+        img {
+          width: 80%;
+          margin-right: 0;
+          padding: 20px 0;
+        }
+        .price {
+          width: 100%;
+          font-size: 19px;
+          text-align: center;
+        }
+        .quantityWrap {
+          width: 25%;
+          margin-right: 0;
+
+          .minus {
+            font-size: 12px;
+          }
+          .plus {
+            font-size: 12px;
+          }
+        }
+
+        .btn-ul {
+          display: flex;
+          justify-content: space-around;
+          width: 70%;
+          gap: 10px;
+          margin: 20px auto;
+          margin-bottom: 0;
+          .btn-li {
+            width: 100%;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    .btnWrap {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .button {
+        width: 30%;
+        margin: 0;
+      }
+    }
+  }
+}
+@media all and (max-width: 425px) and (min-width: 375px) {
+  .cartWrap {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 166px;
+    box-sizing: border-box;
+
+    .productUl {
+      .box1 {
+        margin-left: 0;
+        width: 52%;
+        margin-right: 20px;
+      }
+      .box2 {
+        width: 50%;
+      }
+    }
+
+    .priceCard {
+      gap: 6px;
+      padding: 80px 0;
+      .icon {
+        font-size: 70px;
+      }
+      .priceCardWrap {
+        .priceText {
+          font-size: 15px;
+        }
+        .price {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .productList {
+      li {
+        flex-direction: column;
+        flex-wrap: wrap;
+        position: relative;
+        input.checkProduct {
+          width: 18px;
+          height: 18px;
+          position: absolute;
+          top: 62.6%;
+          left: 20%;
+          margin: 0;
+        }
+        .txt {
+          width: 100%;
+          text-align: center;
+          padding-top: 0;
+          .title {
+            font-size: 19px;
+          }
+          .category {
+            font-size: 16px;
+          }
+          .txt2 {
+            margin-top: 0;
+            justify-content: center;
+            width: 100%;
+            .quantity {
+              font-size: 16px;
+            }
+            .colorName {
+              font-size: 16px;
+            }
+          }
+        }
+        img {
+          width: 80%;
+          margin-right: 22px;
+          padding: 20px 0;
+        }
+        .price {
+          width: 100%;
+          font-size: 16px;
+          text-align: center;
+        }
+        .quantityWrap {
+          width: 28%;
+          margin-right: 0;
+        }
+
+        .btn-ul {
+          display: flex;
+          justify-content: space-around;
+          width: 100%;
+          gap: 10px;
+          margin: 20px auto;
+          margin-bottom: 0;
+          .btn-li {
+            width: 100%;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    .btnWrap {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .button {
+        width: 30%;
+        margin: 0;
+      }
+    }
+  }
+}
+@media all and (max-width: 375px) and (min-width: 320px) {
+  .cartWrap {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 223px;
+    box-sizing: border-box;
+
+    .productUl {
+      .box1 {
+        margin-left: 0;
+        width: 52%;
+        margin-right: 20px;
+      }
+      .box2 {
+        width: 50%;
+      }
+    }
+    .priceCard {
+      gap: 6px;
+      padding: 80px 0;
+      .icon {
+        font-size: 70px;
+      }
+      .priceCardWrap {
+        .priceText {
+          font-size: 15px;
+        }
+        .price {
+          font-size: 16px;
+        }
+      }
+    }
+    .productList {
+      li {
+        gap: 20px;
+        flex-direction: column;
+        flex-wrap: wrap;
+        position: relative;
+        input.checkProduct {
+          width: 18px;
+          height: 18px;
+          position: absolute;
+          top: 55.2%;
+          left: 14%;
+          margin: 0;
+        }
+        .txt {
+          width: 100%;
+          text-align: center;
+          padding-top: 0;
+          .title {
+            font-size: 19px;
+          }
+          .category {
+            font-size: 16px;
+          }
+          .txt2 {
+            margin-top: 0;
+            justify-content: center;
+            width: 100%;
+            .quantity {
+              font-size: 16px;
+            }
+            .colorName {
+              font-size: 16px;
+            }
+          }
+        }
+        img {
+          width: 80%;
+          margin-right: 22px;
+          padding: 20px 0;
+        }
+        .price {
+          width: 100%;
+          font-size: 16px;
+          text-align: center;
+        }
+        .quantityWrap {
+          width: 28%;
+          margin-right: 0;
+        }
+
+        .btn-ul {
+          display: flex;
+          justify-content: space-around;
+          width: 100%;
+          gap: 10px;
+          margin: 20px auto;
+          margin-bottom: 0;
+          .btn-li {
+            width: 100%;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    .btnWrap {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .button {
+        width: 32%;
+        margin: 0;
+        font-size: 12px;
+      }
+    }
+  }
+}

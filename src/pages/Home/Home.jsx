@@ -5,18 +5,22 @@ import Footer from "../Footer/Footer";
 import Card from "../../components/Card";
 import Trending from "../../components/Trending";
 import Sport from "../../components/Sport";
-import BasicMap from "../../components/BasicMap";
 import FAQ from "../../components/FAQ";
+import { BestSellersProvider } from "../../components/context/BestSellersContext";
+import { SportsProvider } from "../../components/context/SportsContext";
 
 export default function Home() {
   return (
     <>
       <Main />
-      <Card />
+      <BestSellersProvider>
+        <Card />
+      </BestSellersProvider>
       <Banner />
       <Trending />
-      <Sport />
-      <BasicMap />
+      <SportsProvider>
+        <Sport />
+      </SportsProvider>
       <FAQ />
       <Footer />
     </>

@@ -67,7 +67,7 @@ export default function Footer() {
             </li>
           </ul>
           <h2 className="footer-logo">
-            <a href="/">
+            <a href="/react-nike/">
               <img src={logo} alt="푸터 로고" />
             </a>
           </h2>
@@ -80,22 +80,38 @@ export default function Footer() {
           <div className="footer-other">
             <ul className="icons">
               <li>
-                <a href="https://www.instagram.com/nike/"> 
+                <a
+                  href="https://twitter.com/Nike"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <BsTwitter />
                 </a>
               </li>
               <li>
-                <a href="/">
+                <a
+                  href="https://www.facebook.com/nike/?locale=ko_KR"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <BiLogoFacebook />
                 </a>
               </li>
               <li>
-                <a href="/">
+                <a
+                  href="https://www.instagram.com/nike/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <BsInstagram />
                 </a>
               </li>
               <li>
-                <a href="/">
+                <a
+                  href="https://www.youtube.com/@koreanike"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FiYoutube />
                 </a>
               </li>
@@ -115,7 +131,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <span>©2023 Oh YoonSeo. All Rights Reserved.</span>
+          <span>©2024 Oh YoonSeo. All Rights Reserved.</span>
         </div>
       </div>
     </footer>

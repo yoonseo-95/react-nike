@@ -1,16 +1,15 @@
-import React from 'react';
+import React from "react";
 import "./User.scss";
 
-export default function User({user: {photoURL, displayName}}) {
+export default function User({ user: { photoURL } }) {
   return (
     <div className="user">
       <img
-       src={photoURL} 
-       alt={displayName} 
-       className="userImg"
-       referrerPolicy="no-referrer"
+        src={photoURL}
+        alt="프로필이미지"
+        className="userImg"
+        referrerPolicy="no-referrer"
       />
     </div>
   );
 }
-

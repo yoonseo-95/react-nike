@@ -1,10 +1,18 @@
 .user {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-radius: 100%;
+  position: relative;
   display: flex;
   align-items: center;
   .userImg {
-    width: 30px;
-    height: 30px;
-    border-radius: 100%;
     cursor: pointer;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   }
 }

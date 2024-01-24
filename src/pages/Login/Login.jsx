@@ -1,19 +1,27 @@
 import React, { useState } from "react";
 import "./Login.scss";
 import Footer from "../Footer/Footer";
-import { Link, useOutletContext } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { login, loginWithEmail } from "../../api/firebase";
 
 export default function Login() {
-  const { handleLogin } = useOutletContext();
+  const handleLogin = () => {
+    login();
+  };
+
+  const handleEmailLogin = async () => {
+    const email = document.querySelector('#login-form [name="userName"]').value;
+    const password = document.querySelector(
+      '#login-form [name="userPassword"]'
+    ).value;
+    await loginWithEmail(email, password);
+  };
 
   const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (index) => {
     setToggleState(index);
   };
-
-  // const REDIRECT_URI = "http://localhost:3000/login";
-  // const STATE = "false";
 
   return (
     <div className="Wrap">
@@ -38,22 +46,24 @@ export default function Login() {
               <input
                 type="text"
                 name="userName"
-                placeholder="아이디 또는 이메일"
+                placeholder="이메일"
+                autoComplete="off"
               />
               <input
                 type="password"
                 name="userPassword"
                 placeholder="비밀번호"
+                autoComplete="off"
               />
               <label htmlFor="remember-check">
                 <input type="checkbox" id="remember-check" />
                 <span>아이디 저장하기</span>
               </label>
-              <input type="button" value="로그인" />
+              <input type="button" value="로그인" onClick={handleEmailLogin} />
             </form>
 
             <div className="logLink">
-              <Link to="/" alt="회원가입">
+              <Link to={"/join"} alt="회원가입">
                 <span>회원가입</span>
               </Link>
               <Link to="/" alt="회원가입">
@@ -78,6 +88,7 @@ export default function Login() {
                 name="userName"
                 placeholder="주문자명"
                 style={{ marginBottom: "0" }}
+                autoComplete="off"
               />
               <input
                 type="text"
@@ -85,14 +96,16 @@ export default function Login() {
                 placeholder="주문번호 하이픈(-) 포함"
                 maxLength="13"
                 style={{ marginTop: "10px" }}
+                autoComplete="off"
               />
               <input
                 type="password"
                 name="userPassword"
                 placeholder="비회원 주문 비밀번호"
+                autoComplete="off"
               />
               <input
-                type="submit"
+                type="button"
                 value="비회원 로그인"
                 className="nonmember-login"
               />

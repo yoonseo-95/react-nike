@@ -1,6 +1,6 @@
 .newProduct {
-  padding-top: 100px;
-
+  padding: 150px 0;
+  padding-top: 300px;
   .container {
     width: 320px;
 
@@ -72,15 +72,12 @@
         font-family: "Noto Sans KR", sans-serif;
         margin-right: 50px;
       }
-      .productSubTitle {
-        width: 74.9%;
+      .subTitleOptions {
+        width: 75%;
         height: 28px;
-        border: 1px solid #cccccc;
-        border-radius: 2px;
-        padding: 0 12px;
-        box-sizing: border-box;
-        font-size: 15px;
+        border: 1px solid #ccc;
         margin-bottom: 20px;
+        outline: none;
       }
       .category {
         font-family: "Noto Sans KR", sans-serif;
@@ -124,69 +121,92 @@
         font-size: 15px;
         margin-bottom: 20px;
       }
-      .colorWrap1 {
+
+      .colorWrap {
         display: flex;
-        .colorName1 {
-          width: 59%;
+        flex-wrap: wrap;
+        .colorFile {
+          width: 100%;
+          height: 40px;
+          border: 1px solid #cccc;
+          margin-bottom: 20px;
+          padding: 7px;
+          box-sizing: border-box;
+        }
+        span {
+          font-family: "Noto Sans KR", sans-serif;
+          margin-right: 26px;
+        }
+        .colorName {
+          width: 39%;
           height: 28px;
-          border: 1px solid #cccccc;
+          border: 1px solid #cccc;
           border-radius: 2px;
           padding: 0 12px;
           box-sizing: border-box;
           font-size: 15px;
+          margin-right: 7px;
           margin-bottom: 20px;
-          margin-right: 10px;
-          &:focus {
-            outline: none;
-          }
+          margin-left: 0;
         }
-      }
-      .colorWrap2 {
-        display: flex;
-        .colorName2 {
-          width: 59%;
+        .color {
+          width: 35px;
           height: 28px;
-          border: 1px solid #cccccc;
-          border-radius: 2px;
-          padding: 0 12px;
-          box-sizing: border-box;
-          font-size: 15px;
-          margin-bottom: 20px;
-          margin-right: 10px;
-          &:focus {
-            outline: none;
+          transition: 0.3s;
+          margin: 0;
+        }
+        .color-btn-add {
+          margin-left: 5px;
+          width: 30px;
+          height: 28px;
+          margin-right: 6px;
+          border-radius: 5px;
+          border: 1px solid #cccc;
+          line-height: 28px;
+          font-size: 20px;
+          color: #2d2d2d;
+          &:hover {
+            background: #000;
+            color: #fff;
+            border: none;
           }
         }
-      }
-      .color {
-        font-family: "Noto Sans KR", sans-serif;
-        margin-right: 33px;
-      }
-      .productColor {
-        width: 10%;
-        height: 28px;
-        border: 1px solid #cccccc;
-        border-radius: 2px;
-        box-sizing: border-box;
-        font-size: 15px;
-        margin-bottom: 20px;
-        &:nth-of-type(1) {
-          margin-right: 10px;
+        .color-btn-remove {
+          width: 30px;
+          height: 28px;
+          border-radius: 5px;
+          border: 1px solid #cccc;
+          line-height: 28px;
+          font-size: 20px;
+          color: #2d2d2d;
+          &:hover {
+            background: #000;
+            color: #fff;
+            border: none;
+          }
         }
-      }
-      > input:focus {
-        outline: none;
       }
     }
   }
 }
-
+@media all and (max-width: 768px) {
+  .newProduct {
+    padding-top: 163px;
+  }
+}
 @media screen and (max-width: 320px) {
   .newProduct {
+    padding-top: 100px;
     .container {
       width: 100%;
       padding: 120px 20px;
       box-sizing: border-box;
+      .title {
+        &::after {
+          left: 89px;
+          width: 36%;
+        }
+      }
       > form {
         .name {
           display: block;
@@ -207,9 +227,13 @@
           height: 40px;
         }
         .subTitle {
-          display: block;
           margin-right: 0;
           margin-bottom: 10px;
+          display: block;
+        }
+        .subTitleOptions {
+          width: 100%;
+          height: 40px;
         }
         .productSubTitle {
           width: 100%;
@@ -250,6 +274,40 @@
         .productColor {
           width: 100%;
           height: 40px;
+        }
+        .colorWrap {
+          margin-bottom: 20px;
+          span {
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+          }
+          .colorName {
+            width: 46%;
+            height: 40px;
+            position: relative;
+            float: left;
+            margin-right: 10px;
+          }
+          .color {
+            position: static;
+            margin: 0;
+            float: left;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+          }
+          .color-btn-add {
+            margin: 0;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+          }
+          .color-btn-remove {
+            margin: 0;
+            width: 40px;
+            height: 40px;
+          }
         }
       }
     }

@@ -1,0 +1,446 @@
+.Join {
+  margin-top: 300px;
+  margin-bottom: 200px;
+  .JoinContain {
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid #575757;
+    border-radius: 5px;
+    padding: 20px;
+
+    h2 {
+      font-family: "Noto Sans KR", sans-serif;
+      font-size: 30px;
+      font-weight: 500;
+      margin-bottom: 50px;
+      margin-top: 22px;
+    }
+
+    form {
+      position: relative;
+      .fileIconBox {
+        display: block;
+        width: 35px;
+        height: 35px;
+        border-radius: 100%;
+        background-color: #585858;
+        text-align: center;
+        line-height: 39px;
+        position: absolute;
+        top: 87px;
+        left: 217px;
+        cursor: pointer;
+        .fileIcon {
+          font-size: 17px;
+          color: #fff;
+        }
+      }
+      #file {
+        display: none;
+      }
+      .img-i {
+        width: 120px;
+        height: 120px;
+        border-radius: 100px;
+        background: #bcbcbc;
+        margin-bottom: 50px;
+      }
+      .img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 50px;
+        overflow: hidden;
+        border-radius: 100%;
+        position: relative;
+        img {
+          width: 100%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      .id {
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        label {
+          font-family: "Noto Sans KR", sans-serif;
+          font-size: 18px;
+          margin-right: 20px;
+          margin-left: 0;
+        }
+        input {
+          width: 290px;
+          height: 40px;
+          margin: 0;
+          border: 1px solid #898989ee;
+          border-radius: 5px;
+          padding-right: 15px;
+          padding-left: 15px;
+          box-sizing: border-box;
+          &::placeholder {
+            font-family: "Noto Sans KR", sans-serif;
+            font-size: 15px;
+          }
+        }
+      }
+      .email {
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        label {
+          font-family: "Noto Sans KR", sans-serif;
+          font-size: 18px;
+          margin-right: 20px;
+          margin-left: 0;
+        }
+        input {
+          width: 290px;
+          height: 40px;
+          margin: 0;
+          border: 1px solid #898989ee;
+          border-radius: 5px;
+          padding-right: 15px;
+          padding-left: 15px;
+          box-sizing: border-box;
+          &::placeholder {
+            font-family: "Noto Sans KR", sans-serif;
+            font-size: 15px;
+          }
+        }
+      }
+      .pwd {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        margin-bottom: 20px;
+        label {
+          font-family: "Noto Sans KR", sans-serif;
+          font-size: 18px;
+          margin-right: 20px;
+          margin-left: 0;
+        }
+        input {
+          width: 290px;
+          height: 40px;
+          margin: 0;
+          border: 1px solid #898989ee;
+          border-radius: 5px;
+          padding-right: 15px;
+          padding-left: 15px;
+          box-sizing: border-box;
+          &::placeholder {
+            font-family: "Noto Sans KR", sans-serif;
+            font-size: 15px;
+          }
+        }
+      }
+      button {
+        cursor: pointer;
+        width: 100%;
+        height: 50px;
+        background-color: #000;
+        border: none;
+        color: #fff;
+        font-family: "Noto Sans KR", sans-serif;
+        font-size: 18px;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+@media all and (max-width: 1024px) and (min-width: 768px) {
+  .Join {
+    padding: 260px;
+    box-sizing: border-box;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    .JoinContain {
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      form {
+        .fileIconBox {
+          width: 30px;
+          height: 30px;
+          top: 93px;
+          left: 254px;
+          line-height: 32px;
+
+          .fileIcon {
+            font-size: 15px;
+          }
+        }
+        .id {
+          input {
+            width: 80%;
+          }
+        }
+        .email {
+          input {
+            width: 80%;
+          }
+        }
+        .pwd {
+          input {
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 768px) and (min-width: 500px) {
+  .Join {
+    padding: 145px;
+    box-sizing: border-box;
+    margin-top: 41px;
+    margin-bottom: -38px;
+
+    .JoinContain {
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      form {
+        .id {
+          input {
+            width: 74%;
+          }
+        }
+        .email {
+          input {
+            width: 74%;
+          }
+        }
+        .pwd {
+          input {
+            width: 74%;
+          }
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 500px) and (min-width: 461px) {
+  .Join {
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 184px;
+    margin-bottom: 0;
+    .JoinContain {
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      form {
+        .id {
+          flex-direction: column;
+          align-items: flex-start;
+          label {
+            margin-bottom: 20px;
+          }
+          input {
+            width: 100%;
+          }
+        }
+        .email {
+          flex-direction: column;
+          align-items: flex-start;
+          label {
+            margin-bottom: 20px;
+          }
+          input {
+            width: 100%;
+          }
+        }
+        .pwd {
+          flex-direction: column;
+          align-items: flex-start;
+          label {
+            margin-bottom: 20px;
+          }
+          input {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 461px) and (min-width: 425px) {
+  .Join {
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 124px;
+    margin-bottom: 0;
+    .JoinContain {
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      form {
+        .fileIconBox {
+          width: 30px;
+          height: 30px;
+          top: 90px;
+          left: 193px;
+          line-height: 32px;
+
+          .fileIcon {
+            font-size: 15px;
+          }
+        }
+
+        .id {
+          flex-direction: column;
+          align-items: flex-start;
+          label {
+            margin-bottom: 20px;
+          }
+          input {
+            width: 100%;
+          }
+        }
+        .email {
+          flex-direction: column;
+          align-items: flex-start;
+          label {
+            margin-bottom: 20px;
+          }
+          input {
+            width: 100%;
+          }
+        }
+        .pwd {
+          flex-direction: column;
+          align-items: flex-start;
+          label {
+            margin-bottom: 20px;
+          }
+          input {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 425px) and (min-width: 375px) {
+  .Join {
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 100px;
+    margin-bottom: 0;
+    .JoinContain {
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      form {
+        .fileIconBox {
+          width: 30px;
+          height: 30px;
+          top: 90px;
+          left: 167px;
+          line-height: 32px;
+
+          .fileIcon {
+            font-size: 15px;
+          }
+        }
+        .id {
+          flex-direction: column;
+          align-items: flex-start;
+          label {
+            margin-bottom: 20px;
+          }
+          input {
+            width: 100%;
+          }
+        }
+        .email {
+          flex-direction: column;
+          align-items: flex-start;
+          label {
+            margin-bottom: 20px;
+          }
+          input {
+            width: 100%;
+          }
+        }
+        .pwd {
+          flex-direction: column;
+          align-items: flex-start;
+          label {
+            margin-bottom: 20px;
+          }
+          input {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 375px) and (min-width: 320px) {
+  .Join {
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 172px;
+    margin-bottom: 44px;
+    .JoinContain {
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+
+      form {
+        .fileIconBox {
+          width: 30px;
+          height: 30px;
+          top: 90px;
+          left: 144px;
+          line-height: 32px;
+
+          .fileIcon {
+            font-size: 15px;
+          }
+        }
+        .id {
+          flex-direction: column;
+          align-items: flex-start;
+          label {
+            margin-bottom: 20px;
+          }
+          input {
+            width: 100%;
+          }
+        }
+        .email {
+          flex-direction: column;
+          align-items: flex-start;
+          label {
+            margin-bottom: 20px;
+          }
+          input {
+            width: 100%;
+          }
+        }
+        .pwd {
+          flex-direction: column;
+          align-items: flex-start;
+          label {
+            margin-bottom: 20px;
+          }
+          input {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -2,14 +2,14 @@
   width: 100%;
   .contain {
     width: 1250px;
-    padding-top: 230px;
-    padding-bottom: 200px;
+    padding-top: 300px;
+    padding-bottom: 180px;
 
     .tabs {
       display: flex;
       width: 460px;
       .tab {
-        width: 230px;
+        width: 50%;
         height: 50px;
         background: #fff;
         color: #000;
@@ -118,13 +118,16 @@
             &::after {
               content: "";
               display: block;
-              width: 2px;
-              height: 25px;
+              width: 1px;
+              height: 22px;
               background: #e0e0e0;
               position: absolute;
-              top: 0;
+              top: 2px;
               right: -41px;
             }
+          }
+          &:nth-of-type(2) span:after {
+            width: 1.5px;
           }
           &:nth-of-type(3) span:after {
             display: none;
@@ -207,50 +210,19 @@
   .Wrap {
     .contain {
       width: 100%;
-    }
-  }
-}
-
-@media all and (max-width: 425px) {
-  .Wrap {
-    .contain {
-      padding-left: 20px;
-      padding-right: 20px;
-      box-sizing: border-box;
-      .tabs {
-        width: 100%;
-      }
       .content-tabs {
-        width: 100%;
-
         .active-content {
-          width: 100%;
-
-          > form {
-            input[type="text"] {
-              width: 100%;
-            }
-            input[type="password"] {
-              width: 100%;
-            }
-            input[type="button"] {
-              width: 100%;
-            }
-          }
           .logLink {
-            width: 100%;
-          }
-          .loginWrap {
-            .google_login {
-              width: 100%;
+            a {
+              span {
+                &:nth-child(1)::after {
+                  width: 1.5px;
+                }
+                &:nth-child(2)::after {
+                  width: 1.3px !important;
+                }
+              }
             }
-            .naver_login {
-              width: 100%;
-            }
-          }
-
-          input[type="submit"] {
-            width: 100%;
           }
         }
       }
@@ -258,17 +230,237 @@
   }
 }
 
-@media all and (max-width: 425px) {
+@media all and (max-width: 768px) and (min-width: 500px) {
   .Wrap {
     .contain {
+      width: 100%;
+      padding: 228px 100px;
+      box-sizing: border-box;
+
+      .tabs {
+        width: 100% !important;
+        .tab {
+          width: 50% !important;
+        }
+      }
       .content-tabs {
-        .logLink {
-          > a {
-            > span {
-              &::after {
-                display: none;
+        .active-content {
+          width: 100%;
+          form {
+            display: flex;
+            flex-direction: column;
+            input {
+              width: 100% !important;
+              margin-left: 0;
+              margin-right: 0;
+            }
+            label {
+              margin-left: 0;
+              input[type="checkbox"] {
+                width: 15px !important;
+                margin-left: 0 !important;
               }
             }
+          }
+        }
+        .logLink {
+          width: 100%;
+          margin-left: 0;
+          margin-right: 0;
+          a {
+            span {
+              &::after {
+                right: -60px;
+              }
+            }
+          }
+        }
+        .loginWrap {
+          .google_login {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 500px) and (min-width: 425px) {
+  .Wrap {
+    .contain {
+      width: 100% !important;
+      padding-top: 200px;
+      padding-bottom: 76px;
+      padding-left: 20px;
+      padding-right: 20px;
+      box-sizing: border-box;
+
+      .tabs {
+        width: 100% !important;
+        .tab {
+          width: 50% !important;
+        }
+      }
+      .content-tabs {
+        .active-content {
+          width: 100%;
+          form {
+            display: flex;
+            flex-direction: column;
+            input {
+              width: 100% !important;
+              margin-left: 0;
+              margin-right: 0;
+            }
+            label {
+              margin-left: 0;
+              input[type="checkbox"] {
+                width: 15px !important;
+                margin-left: 0 !important;
+              }
+            }
+          }
+        }
+        .logLink {
+          width: 100%;
+          margin-left: 0;
+          margin-right: 0;
+          a {
+            span {
+              &::after {
+                right: -31px;
+              }
+            }
+          }
+        }
+        .loginWrap {
+          .google_login {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 425px) and (min-width: 375px) {
+  .Wrap {
+    .contain {
+      width: 100% !important;
+      padding-top: 217px;
+      padding-bottom: 76px;
+      padding-left: 20px;
+      padding-right: 20px;
+      box-sizing: border-box;
+
+      .tabs {
+        width: 100% !important;
+        .tab {
+          width: 50% !important;
+        }
+      }
+      .content-tabs {
+        .active-content {
+          width: 100%;
+          form {
+            display: flex;
+            flex-direction: column;
+            input {
+              width: 100% !important;
+              margin-left: 0;
+              margin-right: 0;
+            }
+            label {
+              margin-left: 0;
+              input[type="checkbox"] {
+                width: 15px !important;
+                margin-left: 0 !important;
+              }
+            }
+          }
+        }
+        .logLink {
+          width: 100%;
+          margin-left: 0;
+          margin-right: 0;
+          a {
+            span {
+              &::after {
+                height: 18px;
+                top: 4px;
+                right: -21px;
+              }
+            }
+          }
+        }
+        .loginWrap {
+          .google_login {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 375px) and (min-width: 320px) {
+  .Wrap {
+    .contain {
+      width: 100% !important;
+      padding-top: 217px;
+      padding-bottom: 76px;
+      padding-left: 20px;
+      padding-right: 20px;
+      box-sizing: border-box;
+
+      .tabs {
+        width: 100% !important;
+        .tab {
+          width: 50% !important;
+        }
+      }
+      .content-tabs {
+        .active-content {
+          width: 100%;
+          form {
+            display: flex;
+            flex-direction: column;
+            input {
+              width: 100% !important;
+              margin-left: 0;
+              margin-right: 0;
+            }
+            label {
+              margin-left: 0;
+              input[type="checkbox"] {
+                width: 15px !important;
+                margin-left: 0 !important;
+              }
+            }
+          }
+        }
+        .logLink {
+          width: 100%;
+          margin-left: 0;
+          margin-right: 0;
+          a {
+            span {
+              &::after {
+                height: 18px;
+                top: 4px;
+                right: -10px;
+              }
+            }
+          }
+        }
+        .loginWrap {
+          .google_login {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
           }
         }
       }

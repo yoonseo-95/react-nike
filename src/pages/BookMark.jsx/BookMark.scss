@@ -1,0 +1,400 @@
+.BookMarkWrap {
+  padding-top: 300px;
+  width: 1250px;
+  margin-bottom: 150px;
+  .Bookmark-h2 {
+    font-size: 25px;
+    font-family: "Noto Sans KR";
+    display: block;
+    height: 80px;
+    border-bottom: 2px solid #000;
+  }
+  .bookmarkZero {
+    padding: 40px 0;
+  }
+  .checkDiv {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    margin: 20px 0;
+    gap: 10px;
+    .allCheck {
+      width: 17px;
+      height: 17px;
+      margin: 20px 0;
+      cursor: pointer;
+    }
+    .allCheck-label {
+      font-family: "Noto Sans KR";
+      font-weight: 600;
+      cursor: pointer;
+      margin: 0;
+    }
+    .deleteSelect {
+      padding: 8px 10px;
+      background: none;
+      color: #505050;
+      border: 1.4px solid #b4b4b4;
+      margin: 0;
+      font-family: "Noto Sans KR";
+      font-weight: 400;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        background: #000;
+        color: #fff;
+        border: 1.5px solid #000;
+      }
+    }
+  }
+  .bookMarkUl {
+    li {
+      display: flex;
+      align-items: center;
+      padding: 30px 0;
+      border-top: 1px solid #dadada;
+      box-sizing: border-box;
+      justify-content: space-between;
+
+      .check {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        width: 150px;
+        .date {
+          font-size: 14px;
+          font-family: "Noto Sans KR";
+          font-weight: 400;
+          margin-right: 20px;
+        }
+        input {
+          content: "";
+          display: inline-block;
+          width: 17px;
+          height: 17px;
+          margin: 0;
+        }
+      }
+      img {
+        display: block;
+        width: 200px;
+        margin: 0;
+        margin-right: 50px;
+      }
+
+      .txt {
+        margin: 0;
+        width: 400px;
+        .title {
+          font-size: 20px;
+          font-family: "Noto Sans KR";
+          font-weight: 500;
+          color: #000;
+          display: inline-block;
+          height: 29px;
+          box-sizing: border-box;
+          cursor: pointer;
+          text-align: left;
+
+          &:hover {
+            border-bottom: 1.5px solid #505050;
+          }
+        }
+
+        .category {
+          font-size: 16px;
+          font-family: "Noto Sans KR";
+          font-weight: 500;
+          line-height: 40px;
+          color: #949494;
+        }
+      }
+      .price {
+        font-size: 16px;
+        font-family: "Noto Sans KR";
+        font-weight: 600;
+        color: #000;
+        display: block;
+        width: 220px;
+      }
+      .btn-ul {
+        li {
+          border-top: 0;
+          padding: 8px;
+          border: 1px solid #dadada;
+          text-align: center;
+          margin-bottom: 10px;
+          &.on {
+            background: #000;
+          }
+          &.on a {
+            color: #fff;
+          }
+          a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            font-family: "Noto Sans KR";
+            font-size: 15px;
+            color: #000;
+          }
+
+          &:nth-child(3) {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1024px) and (min-width: 900px) {
+  .BookMarkWrap {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+
+    .bookMarkUl {
+      li {
+        input {
+          margin-right: 30px;
+        }
+        .txt {
+          width: 300px;
+        }
+        .price {
+          width: 114px;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 900px) and (min-width: 768px) {
+  .BookMarkWrap {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+
+    .bookMarkUl {
+      li {
+        input {
+          margin-right: 30px;
+        }
+        .btn-ul {
+          width: 125px;
+        }
+        .price {
+          width: 144px;
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 768px) and (min-width: 657px) {
+  .BookMarkWrap {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+
+    .bookMarkUl {
+      li {
+        gap: 10px;
+        input {
+          margin-right: 30px;
+        }
+        img {
+          margin-right: 30px;
+          width: 160px;
+        }
+        .txt {
+          width: 220px;
+          .title {
+            font-size: 19px;
+          }
+        }
+        .btn-ul {
+          width: 175px;
+        }
+        .price {
+          width: 161px;
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 657px) and (min-width: 500px) {
+  .BookMarkWrap {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+
+    .bookMarkUl {
+      li {
+        gap: 20px;
+        flex-direction: column;
+        .check {
+          width: 100%;
+          display: block;
+          text-align: center;
+          .date {
+            margin-bottom: 20px;
+            margin-right: 0;
+          }
+          input {
+            height: 16px;
+            width: 16px;
+          }
+        }
+        img {
+          margin-right: 0;
+        }
+        .txt {
+          width: 370px;
+          text-align: center;
+        }
+        .price {
+          text-align: center;
+        }
+        .btn-ul {
+          width: 230px;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 500px) and (min-width: 425px) {
+  .BookMarkWrap {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+
+    .bookMarkUl {
+      li {
+        gap: 20px;
+        flex-direction: column;
+        position: relative;
+        .check {
+          width: 100%;
+          display: block;
+          text-align: center;
+          .date {
+            margin-bottom: 20px;
+            margin-right: 0;
+          }
+          input {
+            height: 16px;
+            width: 16px;
+          }
+        }
+        img {
+          margin-right: 0;
+        }
+        .txt {
+          width: 370px;
+          text-align: center;
+        }
+        .price {
+          text-align: center;
+        }
+        .btn-ul {
+          width: 230px;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 425px) and (min-width: 375px) {
+  .BookMarkWrap {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+
+    .bookMarkUl {
+      li {
+        gap: 20px;
+        flex-direction: column;
+        position: relative;
+
+        .check {
+          width: 100%;
+          display: block;
+          text-align: center;
+          .date {
+            margin-bottom: 20px;
+            margin-right: 0;
+          }
+          input {
+            height: 16px;
+            width: 16px;
+          }
+        }
+        img {
+          margin-right: 0;
+        }
+        .txt {
+          width: 370px;
+          text-align: center;
+        }
+        .price {
+          text-align: center;
+        }
+        .btn-ul {
+          width: 230px;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 375px) and (min-width: 320px) {
+  .BookMarkWrap {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+
+    .bookMarkUl {
+      li {
+        gap: 20px;
+        flex-direction: column;
+        position: relative;
+        .check {
+          width: 100%;
+          display: block;
+          text-align: center;
+          .date {
+            margin-bottom: 20px;
+            margin-right: 0;
+          }
+          input {
+            height: 16px;
+            width: 16px;
+          }
+        }
+        img {
+          margin-right: 0;
+        }
+        .txt {
+          width: 370px;
+          text-align: center;
+        }
+        .price {
+          text-align: center;
+        }
+        .btn-ul {
+          width: 230px;
+        }
+      }
+    }
+  }
+}

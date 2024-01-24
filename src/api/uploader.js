@@ -1,11 +1,21 @@
-export async function uploadImage(file) {
+export async function uploadImage(file, isColorFile = false) {
+
+  if (!file) return null;
+
+  const preset = isColorFile ? process.env.REACT_APP_CLOUDINARY_COLOR_PRESET : process.env.REACT_APP_CLOUDINARY_PRESET;
   const data = new FormData();
   data.append("file", file);
-  data.append("upload_preset", process.env.REACT_APP_CLOUDINARY_PRESET);
-  return fetch(process.env.REACT_APP_CLOUDINARY_URL, {
-    method: "POST",
-    body: data,
-  })
-    .then((res) => res.json())
-    .then((data) => data.url);
+  data.append("upload_preset", preset);
+
+  try {
+    const response = await fetch(process.env.REACT_APP_CLOUDINARY_URL, {
+      method: "POST",
+      body: data,
+    });
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    const result = await response.json();
+    return result.url;
+  } catch (error) {
+    return null;
+  }
 }

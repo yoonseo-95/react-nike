@@ -158,6 +158,9 @@
           text-align: center;
           width: 100%;
         }
+        span {
+          text-align: center !important;
+        }
       }
     }
   }
@@ -167,7 +170,7 @@
     .footerBg {
       .footer {
         .gnb {
-          flex-direction: column;
+          flex-wrap: wrap;
           gap: 20px;
         }
       }

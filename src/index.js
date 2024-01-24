@@ -12,6 +12,10 @@ import NotFound from "./pages/NotFound/NotFound";
 import reportWebVitals from "./reportWebVitals";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import ProtectedRoute from "./pages/ProtectedRoute";
+import Join from "./pages/Join/Join";
+import UserPage from "./pages/UserPage/UserPage";
+import BookMark from "./pages/BookMark.jsx/BookMark";
+import { RecoilRoot } from "recoil";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +26,9 @@ const router = createBrowserRouter([
       { index: true, path: "/", element: <Home /> },
       { path: "/login", element: <Login /> },
       { path: "/products", element: <AllProducts /> },
+      { path: "/join", element: <Join /> },
+      { path: "/mypage", element: <UserPage /> },
+      { path: "/bookmark", element: <BookMark /> },
       {
         path: "/products/new",
         element: (
@@ -36,7 +43,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/carts",
-        element: <MyCart />,
+        element: (
+          <MyCart />
+        ),
       },
     ],
   },
@@ -46,9 +55,12 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById("wrap"));
 root.render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <RecoilRoot>
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
+
+  </RecoilRoot>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -2,35 +2,63 @@
   width: 1250px;
   padding-top: 158px;
   position: relative;
+  margin-top: 50px;
   > h3 {
-    font-size: 1.8rem;
-    font-weight: 500;
-    position: absolute;
-    top: 184px;
+    font-size: 4rem;
+    font-weight: 800;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .sport-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    overflow: hidden;
+    button {
+      padding: 5px 20px;
+      margin: 0;
+      font-family: "Noto Sans KR", sans-serif;
+      font-size: 18px;
+      background: none;
+      border: 1.5px solid #000;
+      border-radius: 60px;
+      cursor: pointer;
+      color: #000;
+
+      &.on {
+        background: #000;
+        color: #fff;
+      }
+    }
   }
   .sportWrap {
     box-sizing: border-box;
-    padding-top: 90px;
-    height: 442px;
+    height: 500px;
     overflow: hidden;
+    padding-top: 120px;
     .slide {
       height: 290px;
       cursor: pointer;
-      > img {
-        width: 100%;
-        filter: grayscale(100%);
 
-        &:hover {
-          filter: grayscale(0%);
-        }
+      .sport-width {
+        width: 100%;
+      }
+      .sport-wrapper {
+        padding-bottom: 92.26%;
       }
     }
   }
 }
 .swiper-button-prev {
-  position: absolute !important;
-  top: 50px !important;
-  left: 1133px !important;
+  position: static !important;
+  margin-top: -465px !important;
+  margin-right: 69px !important;
+
+  display: block;
   width: 50px !important;
   height: 50px !important;
   border: 2px solid #a6a6a6;
@@ -46,6 +74,7 @@
   }
 }
 .swiper-button-prev:after {
+  display: block;
   color: #a6a6a6;
   text-align: center;
   line-height: 50px !important;
@@ -53,9 +82,9 @@
   font-weight: 600 !important;
 }
 .swiper-button-next {
-  position: absolute !important;
-  top: 50px !important;
-  right: 0 !important;
+  position: static !important;
+  margin-right: 0 !important;
+  margin-top: -53px !important;
   width: 50px !important;
   height: 50px !important;
   border: 2px solid #a6a6a6;
@@ -70,6 +99,7 @@
   }
 }
 .swiper-button-next:after {
+  display: block;
   color: #a6a6a6;
   text-align: center;
   line-height: 50px;
@@ -78,7 +108,43 @@
   font-weight: 600 !important;
 }
 
-@media all and (max-width: 1024px) {
+@media all and (max-width: 1024px) and (min-width: 992px) {
+  .sport {
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    padding-top: 115px;
+    > h3 {
+      font-size: 4rem;
+      top: 111px;
+    }
+    .sportWrap {
+      padding-top: 120px;
+      .slide {
+        height: 240px;
+
+        .sport-wrapper {
+          padding-bottom: 86.26%;
+        }
+        .sport-imageMargin {
+          top: -43px;
+        }
+      }
+    }
+  }
+  .swiper-button-prev {
+    margin-right: 60px !important;
+    width: 45px !important;
+    height: 45px !important;
+  }
+  .swiper-button-next {
+    margin-top: -48px !important;
+    width: 45px !important;
+    height: 45px !important;
+  }
+}
+@media all and (max-width: 992px) and (min-width: 900px) {
   .sport {
     width: 100%;
     padding-right: 20px;
@@ -86,23 +152,305 @@
     padding-top: 72px;
     box-sizing: border-box;
     > h3 {
-      font-size: 1.6rem;
+      font-size: 4rem;
       top: 111px;
     }
     .sportWrap {
-      padding-top: 105px;
+      padding-top: 120px;
       .slide {
         height: 240px;
+      }
+      .sport-title {
+        font-size: 1.1rem;
+        text-align: center;
+        width: 6rem;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .sport-wrapper {
+        padding-bottom: 90.26%;
       }
     }
   }
   .swiper-button-prev {
-    left: 858px;
-    width: 45px;
-    height: 45px;
+    margin-right: 60px !important;
+    width: 45px !important;
+    height: 45px !important;
   }
   .swiper-button-next {
-    width: 45px;
-    height: 45px;
+    margin-top: -48px !important;
+    width: 45px !important;
+    height: 45px !important;
+  }
+}
+@media all and (max-width: 900px) and (min-width: 768px) {
+  .sport {
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 72px;
+    box-sizing: border-box;
+    > h3 {
+      font-size: 4rem;
+    }
+    .sportWrap {
+      padding-top: 120px;
+      .slide {
+        height: 240px;
+
+        .sport-title {
+          font-size: 1.1rem;
+          text-align: center;
+          width: 6.6rem;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+        .sport-wrapper {
+          padding-bottom: 87.26%;
+        }
+      }
+    }
+  }
+  .swiper-button-prev {
+    width: 45px !important;
+    height: 45px !important;
+  }
+  .swiper-button-next {
+    margin-top: -48px !important;
+    width: 45px !important;
+    height: 45px !important;
+  }
+}
+@media all and (max-width: 768px) and (min-width: 700px) {
+  .sport {
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 72px;
+    box-sizing: border-box;
+    > h3 {
+      font-size: 8vw;
+      top: 111px;
+    }
+    .sportWrap {
+      padding-top: 120px;
+
+      .slide {
+        height: 240px;
+
+        .sport-imageMargin {
+          top: -32px;
+        }
+        .sport-title {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+  .swiper-button-prev {
+    margin-right: 60px !important;
+    width: 45px !important;
+    height: 45px !important;
+  }
+  .swiper-button-next {
+    margin-top: -48px !important;
+    width: 45px !important;
+    height: 45px !important;
+  }
+}
+@media all and (max-width: 700px) and (min-width: 703px) {
+  .sport {
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 72px;
+    box-sizing: border-box;
+    > h3 {
+      font-size: 10vw;
+      top: 111px;
+    }
+    .sport-filters {
+      justify-content: flex-start;
+      button {
+        font-size: 1.1rem;
+      }
+    }
+
+    .sportWrap {
+      .slide {
+        .sport-wrapper {
+          padding-bottom: 86.26%;
+        }
+        .sport-imageMargin {
+          top: -50px;
+        }
+        .sport-title {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+  .swiper-button-prev {
+    margin-right: 60px !important;
+    width: 45px !important;
+    height: 45px !important;
+  }
+  .swiper-button-next {
+    width: 45px !important;
+    height: 45px !important;
+    margin-top: -48px !important;
+  }
+}
+@media all and (max-width: 703px) and (min-width: 425px) {
+  .sport {
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 72px;
+    box-sizing: border-box;
+    > h3 {
+      font-size: 10vw;
+      top: 111px;
+    }
+    .sport-filters {
+      justify-content: flex-start;
+      margin-bottom: 26px;
+      button {
+        font-size: 1rem;
+      }
+    }
+
+    .sportWrap {
+      padding-top: 106px;
+      .slide {
+        .sport-wrapper {
+          padding-bottom: 86.26%;
+        }
+        .sport-title {
+          font-size: 1.1rem;
+          text-align: center;
+          width: 6.6rem;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+  .swiper-button-prev {
+    margin-right: 54px !important;
+    transition: none !important;
+    margin-top: -468px !important;
+    width: 45px !important;
+    height: 45px !important;
+  }
+  .swiper-button-next {
+    transition: none !important;
+    margin-top: -48px !important;
+    height: 45px !important;
+    width: 45px !important;
+  }
+}
+@media all and (max-width: 425px) and (min-width: 375px) {
+  .sport {
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 72px;
+    box-sizing: border-box;
+    > h3 {
+      font-size: 12vw;
+      top: 111px;
+    }
+    .sport-filters {
+      justify-content: flex-start;
+      margin-bottom: 3px;
+      button {
+        font-size: 1rem;
+      }
+    }
+    .sportWrap {
+      padding-top: 106px;
+      .slide {
+        height: 240px;
+        .sport-title {
+          font-size: 1.1rem;
+          text-align: center;
+          width: 7rem;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+        .sport-imageMargin {
+          top: -6px;
+        }
+      }
+    }
+  }
+  .swiper-button-prev {
+    margin-right: 54px !important;
+    transition: none !important;
+    margin-top: -455px !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .swiper-button-next {
+    transition: none !important;
+    width: 40px !important;
+    height: 40px !important;
+    margin-top: -43px !important;
+  }
+}
+@media all and (max-width: 375px) and (min-width: 320px) {
+  .sport {
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 72px;
+    box-sizing: border-box;
+    > h3 {
+      font-size: 12vw;
+      top: 111px;
+    }
+    .sport-filters {
+      justify-content: flex-start;
+      margin-bottom: 2px;
+      button {
+        font-size: 1rem;
+      }
+    }
+    .sportWrap {
+      padding-top: 105px;
+      height: 430px;
+      .slide {
+        height: 240px;
+        .sport-title {
+          font-size: 1.1rem;
+          text-align: center;
+          width: 6rem;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+        .sport-imageMargin {
+          top: -2px;
+        }
+      }
+    }
+  }
+  .swiper-button-prev {
+    transition: none !important;
+    margin-top: -386px !important;
+    margin-right: 54px !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .swiper-button-next {
+    transition: none !important;
+    width: 40px !important;
+    height: 40px !important;
+    margin-top: -43px !important;
   }
 }

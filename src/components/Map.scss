@@ -6,26 +6,26 @@
     display: flex;
     margin-top: 100px;
 
-    >div {
-      width: calc(100%/3);
+    > div {
+      width: calc(100% / 3);
       text-align: center;
       line-height: 40px;
       padding: 60px 0;
-      font-family:"Noto Sans KR", sans-serif;
+      font-family: "Noto Sans KR", sans-serif;
 
       .icon {
         font-size: 1.8rem;
         margin-bottom: 10px;
       }
-      >h3 {
+      > h3 {
         font-size: 20px;
       }
-      >p {
+      > p {
         font-size: 15px;
-        cursor:pointer;
+        cursor: pointer;
 
         &:nth-of-type(1) {
-          cursor:auto;
+          cursor: auto;
         }
       }
     }
@@ -36,6 +36,36 @@
   .content {
     .wrap {
       width: 100%;
+      padding: 0 20px;
+      box-sizing: border-box;
+      gap: 20px;
+    }
+  }
+}
+
+@media all and (max-width: 530px) {
+  .content {
+    .wrap {
+      width: 100%;
+      padding: 0 20px;
+      box-sizing: border-box;
+      gap: 20px;
+      flex-direction: column;
+
+      > div {
+        width: 100%;
+        padding: 20px 0;
+
+        > h3 {
+          font-size: 1.4rem;
+        }
+        > p {
+          font-size: 1.2rem;
+        }
+        > a > p {
+          font-size: 1.2rem;
+        }
+      }
     }
   }
 }

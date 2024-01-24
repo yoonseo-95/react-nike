@@ -1,34 +1,24 @@
 import { Outlet } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import "./App.css";
+import React, { useState } from "react";
 import Header from "./pages/Header/Header";
-import { useEffect, useState } from "react";
-import { login, logout, onUserStateChange } from "../src/api/firebase";
-import { AuthContextProvider } from "./components/context/AuthContext";
-
+import { AuthContextProvider, useAuthContext } from "./components/context/AuthContext";
+import ScrollToTop from "./components/ScrollToTop";
+import { useRecoilValue } from "recoil";
+import { searchQueryState } from "./recoil/RecoilAtoms";
 
 function App() {
-  const [user, setUser] = useState();
-
-  useEffect(() => {
-    onUserStateChange((user) => {
-      setUser(user);
-    });
-  }, []);
-
-  const handleLogin = () => {
-    login();
-  };
-  const handleLogout = () => {
-    logout();
-  };
-
   const queryClient = new QueryClient();
+  const [user, setUser] = useState();
+  const value = useRecoilValue(searchQueryState)
+
   return (
     <QueryClientProvider client={queryClient}>
       <AuthContextProvider>
-        <Header user={user} handleLogout={handleLogout} />
-        <Outlet context={{ handleLogin }} />
+        <ScrollToTop />
+        <Header user={user} setUser={setUser} />
+        <Outlet state={value} />
       </AuthContextProvider>
     </QueryClientProvider>
   );
