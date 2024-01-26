@@ -2,61 +2,50 @@ import React, { useEffect, useState } from "react";
 import Products from "../../components/Products";
 import Footer from "../Footer/Footer";
 import "./AllProducts.scss";
-import { useRecoilState, useRecoilValue } from "recoil";
-import {
-  enteredFilterState,
-  searchQueryState,
-  searchResultsState,
-} from "../../recoil/RecoilAtoms";
+import { useRecoilValue, useRecoilState } from "recoil";
+import { useLocation } from "react-router-dom";
+import { searchQueryState, searchResultsState } from "../../recoil/RecoilAtoms";
+import { fetchProductsFirebase } from "../../api/firebase";
 
 export default function AllProducts() {
   const [filter, setFilter] = useState("전체");
   const [noResults, setNoResults] = useState(false);
-  const [searchResults, setSearchResults] = useRecoilState(searchResultsState);
-  const value = useRecoilValue(searchQueryState);
 
   const handleFilterChange = (newFilter) => {
-    console.log("filter change to:", newFilter);
     setFilter(newFilter);
     setNoResults(false);
   };
-  console.log("Filter:", filter);
-  console.log("Search Results:", searchResults);
+  const location = useLocation();
 
-  const searchParams = new URLSearchParams(window.location.search);
-  const searchQuery = searchParams.get("search");
+  const searchQueryFromURL = new URLSearchParams(location.search).get("search");
+  const searchQuery = useRecoilValue(searchQueryState);
+  const [searchResults, setSearchResults] = useRecoilState(searchResultsState);
 
   useEffect(() => {
-    if (value.length > 0) {
-      fetch(`REACT_APP_FIREBASE_DB_URL`)
-        .then((response) => response.json())
-        .then((responseData) => {
-          const results = Object.values(responseData).filter((product) => {
-            const productTitle = product.title.toLowerCase();
-            const productCategory = product.category.toLowerCase();
-            const isTitleMatch = productTitle.includes(value.toLowerCase());
-            const isCategoryMatch = productCategory.includes(
-              value.toLowerCase()
-            );
+    setSearchResults([]);
+  }, []);
 
-            return isTitleMatch && isCategoryMatch;
-          });
-
+  useEffect(() => {
+    if (searchQueryFromURL) {
+      const fetchData = async () => {
+        try {
+          const results = await fetchProductsFirebase(searchQueryFromURL);
+          setSearchResults(results);
           if (results.length === 0) {
             setNoResults(true);
           } else {
             setNoResults(false);
           }
-          setSearchResults(results);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+        } catch (error) {
+          console.error("Error:", error);
+        }
+      };
+      fetchData();
     } else {
       setSearchResults([]);
       setNoResults(false);
     }
-  }, [searchQuery]);
+  }, [searchQueryFromURL, setSearchResults]);
 
   return (
     <>
@@ -124,13 +113,7 @@ export default function AllProducts() {
           <span className="noResults">죄송합니다. 검색 결과가 없습니다.</span>
         </div>
       )}
-      {!noResults && (
-        <Products
-          filter={filter}
-          setFilter={setFilter}
-          searchResults={searchResults}
-        />
-      )}
+      {!noResults && <Products filter={filter} searchResults={searchResults} />}
       <Footer />
     </>
   );

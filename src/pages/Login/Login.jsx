@@ -42,7 +42,12 @@ export default function Login() {
         </div>
         <div className="content-tabs">
           <div className={toggleState === 1 ? "active-content" : "content"}>
-            <form method="post" action="" id="login-form">
+            <form
+              method="post"
+              action=""
+              id="login-form"
+              // onSubmit={handleEmailLogin}
+            >
               <input
                 type="text"
                 name="userName"

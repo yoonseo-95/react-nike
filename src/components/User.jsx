@@ -1,7 +1,8 @@
 import React from "react";
 import "./User.scss";
 
-export default function User({ user: { photoURL } }) {
+export default function User({ user }) {
+  const { photoURL } = user;
   return (
     <div className="user">
       <img

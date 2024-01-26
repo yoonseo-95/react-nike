@@ -1,38 +1,43 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./MyPageUser.scss";
 import { TbSettingsSearch, TbHexagonLetterG } from "react-icons/tb";
 import { useAuthContext } from "./context/AuthContext";
 import { uploadImage } from "../api/uploader";
-import { updateProfile } from "../api/firebase";
+import { updateProfilePhoto } from "../api/firebase";
+import { auth } from "../api/firebase";
 
 export default function MyPageUser() {
-  const { user } = useAuthContext();
-  const { photoURL, displayName } = user;
-  const [file, setFile] = useState("");
-  const [imageURL, setImageURL] = useState(photoURL);
+  const { user, setUser } = useAuthContext();
+  let { photoURL, displayName } = user;
+  const [file, setFile] = useState(null);
+  const [imageURL, setImageURL] = useState();
 
-  const handleFileChange = (e) => {
+  useEffect(() => {
+    setImageURL(photoURL);
+  }, [photoURL]);
+
+  const handleFileChange = async (e) => {
     const selectedFile = e.target.files[0];
     setFile(selectedFile);
 
     if (selectedFile) {
+      console.log("handleFileChange 함수 호출됨");
       const objectURL = URL.createObjectURL(selectedFile);
       setImageURL(objectURL);
-    }
-  };
+      try {
+        const newPhotoURL = await uploadImage(selectedFile);
+        const updatedUser = { ...user, photoURL: newPhotoURL };
+        await updateProfilePhoto(auth, updatedUser);
 
-  const handleUpdateProfile = async () => {
-    try {
-      if (file) {
-        const newPhotoURL = await uploadImage(file);
-        await updateProfile({ photoURL: newPhotoURL });
+        setUser(updatedUser);
         setImageURL(newPhotoURL);
 
-        alert("프로필이 업데이트 되었습니다.");
-      } else {
+        window.location.reload();
+      } catch (error) {
+        console.log("프로필 업데이트 실패: ", error);
       }
-    } catch (error) {
-      console.log("프로필 업데이트 실패: ", error);
+    } else {
+      console.log("파일이 선택되지 않았습니다.");
     }
   };
 
@@ -41,11 +46,11 @@ export default function MyPageUser() {
       <div className="imgWrap">
         {imageURL && (
           <img
-            src={photoURL}
+            src={imageURL}
             alt="프로필 이미지"
             className="MyImg"
             referrerPolicy="no-referrer"
-            onChange={handleFileChange}
+            id="profileImage"
           />
         )}
         {!imageURL && (
@@ -54,15 +59,11 @@ export default function MyPageUser() {
             alt="프로필 이미지"
             className="MyImg"
             referrerPolicy="no-referrer"
-            onChange={handleFileChange}
           />
         )}
       </div>
       <label htmlFor="newFileInput">
-        <TbSettingsSearch
-          className="newFileInputIcon"
-          onClick={handleUpdateProfile}
-        />
+        <TbSettingsSearch className="newFileInputIcon" />
       </label>
       <input
         type="file"

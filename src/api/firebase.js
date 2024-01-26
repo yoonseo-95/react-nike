@@ -11,8 +11,7 @@ import {
   updateProfile as firebaseUpdatedProfile,
   deleteUser
 } from "firebase/auth";
-import { getDatabase, ref as databaseRef, set, get, remove } from "firebase/database";
-// import { uploadImage } from "./uploader";
+import { getDatabase, ref as databaseRef, set, get, remove, query, orderByChild, startAt, endAt } from "firebase/database";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -23,7 +22,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+export const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 const database = getDatabase(app);
 
@@ -133,10 +132,10 @@ export async function signUp({ email, password, displayName, photoURL }) {
 
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
+    user.photoURL = photoURL;
+    user.displayName = displayName;
 
-    const profile = { displayName, photoURL };
-
-    await updateProfile(user, profile);
+    await updateProfilePhoto(auth, user);
 
     return userCredential;
   } catch (error) {
@@ -174,10 +173,53 @@ export async function loginWithEmail(email, password) {
   }
 }
 
-export async function updateProfile(photoURL) {
+export async function updateProfilePhoto(auth, user) {
   try {
-    await firebaseUpdatedProfile(auth.currentUser, photoURL);
+    const profile = {
+      displayName: user.displayName,
+      photoURL: user.photoURL
+    }
+    await firebaseUpdatedProfile(auth.currentUser, profile);
+    return user;
   } catch (error) {
     console.log("프로필 업데이트 오류:", error)
   }
+}
+
+export async function fetchProductsFirebase(search) {
+  const productsRef = databaseRef(database, "products");
+
+  if (!search) {
+    const response = await get(productsRef);
+    const allProducts = [];
+    response.forEach((productSnapshot) => {
+      const product = productSnapshot.val();
+      allProducts.push(product);
+    })
+    return allProducts;
+  }
+
+  const titleQuery = query(productsRef, orderByChild("title"), startAt(search), endAt(search + "\uf8ff"));
+  const categoryQuery = query(productsRef, orderByChild("category"), startAt(search), endAt(search + "\uf8ff"));
+
+  const [titleResponse, categoryResponse] = await Promise.all([
+    get(titleQuery),
+    get(categoryQuery),
+  ])
+
+  const titleResults = [];
+  titleResponse.forEach((productSnapshot) => {
+    const product = productSnapshot.val();
+    titleResults.push(product);
+  })
+
+  const categoryResults = [];
+  categoryResponse.forEach((productSnapshot) => {
+    const product = productSnapshot.val();
+    categoryResults.push(product);
+  })
+
+  const searchResults = [...titleResults, ...categoryResults];
+
+  return searchResults;
 }

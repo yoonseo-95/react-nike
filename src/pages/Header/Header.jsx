@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Header.scss";
 import {
   IoMenuOutline,
@@ -22,7 +22,7 @@ export default function Header({ user, setUser }) {
   const [isMobileMenu, setIsMobileMenu] = useState(null);
   const [isMobileSubMenu, setIsMobileSubMenu] = useState(null);
   const [visible, setVisible] = useState("");
-  const [value, setValue] = useRecoilState(searchQueryState);
+  const navigate = useNavigate();
 
   useEffect(() => {
     onUserStateChange((user) => {
@@ -81,21 +81,17 @@ export default function Header({ user, setUser }) {
     setIsMobileSubMenu(null);
   };
 
-  const navigate = useNavigate();
-  const nowContent = useRef();
+  const [searchQuery, setSearchQuery] = useRecoilState(searchQueryState);
 
-  const handleToSearch = (e) => {
-    if (e.key === "Enter") {
-      console.log("value" + value);
-      if (value.trim() !== "") {
-        const searchValue = nowContent.current.value;
-
-        console.log("Navigation to /products?search=" + value);
-        navigate(`/products?search=${searchValue}`);
-      }
-    }
+  const handleSearch = (e) => {
+    navigate(`/products?search=${searchQuery}`);
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
   return (
     <header className={scrollPosition < 100 ? "header" : "header-color"}>
       <div className="headerWrap">
@@ -114,21 +110,7 @@ export default function Header({ user, setUser }) {
           className={
             scrollPosition < 100 ? "search-other" : "search-other-color"
           }
-        >
-          <form action="">
-            <input
-              type="text"
-              name="search"
-              placeholder="search"
-              className="searchInput"
-              ref={nowContent}
-              value={value}
-              onChange={(e) => setValue(e.target.value)}
-              onKeyUp={handleToSearch}
-            />
-            <IoSearchOutline className="search-icon" />
-          </form>
-        </div>
+        ></div>
         <ul className="gnb">
           {NAV.map((menu) => {
             return (
@@ -441,10 +423,13 @@ export default function Header({ user, setUser }) {
           <li>
             <form action="">
               <input
-                type="text"
+                type="search"
                 name="search"
                 placeholder="search"
                 className="searchInput"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyPress={handleKeyPress}
               />
               <IoSearchOutline className="search" />
             </form>
