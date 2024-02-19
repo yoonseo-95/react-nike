@@ -4,10 +4,13 @@ import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
 import { SlLocationPin, SlPaperPlane, SlEarphonesAlt } from "react-icons/sl";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
 import { Link } from "react-router-dom";
 
 export default function FAQ() {
+  useEffect(() => {
+    AOS.init();
+  });
+
   const [toggleState, setToggleState] = useState(1);
   const toggleTab = (index) => {
     setToggleState(index);
@@ -21,31 +24,44 @@ export default function FAQ() {
       setToggleAnswer(index);
     }
   };
-  useEffect(() => {
-    AOS.init();
-  }, []);
 
   return (
     <section className="container">
-      <div
-        className="wrap"
-        data-aos="fade-down"
-        data-aos-delay="1600"
-        data-aos-duration="1500"
-      >
-        <div className="box1">
+      <div className="wrap">
+        <div
+          className="box1"
+          data-aos="fade-down"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="800"
+          data-aos-delay="1700"
+          data-aos-once="true"
+        >
           <SlLocationPin className="icon" />
           <h3>나이키 매장 문의</h3>
           <p>전지역 나이키 매장 위치를 확인하세요.</p>
         </div>
-        <div className="box2">
+        <div
+          className="box2"
+          data-aos="fade-down"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="800"
+          data-aos-delay="1800"
+          data-aos-once="true"
+        >
           <SlPaperPlane className="icon" />
           <h3>제품 및 주문 Email문의</h3>
           <Link to="mailto:service@nike.co.kr">
             <p>service@nike.co.kr</p>
           </Link>
         </div>
-        <div className="box3">
+        <div
+          className="box3"
+          data-aos="fade-down"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="800"
+          data-aos-delay="1900"
+          data-aos-once="true"
+        >
           <SlEarphonesAlt className="icon" />
           <h3>고객센터 전화 문의</h3>
           <Link to="tel:080-022-0182">
@@ -54,14 +70,22 @@ export default function FAQ() {
         </div>
       </div>
 
-      <h2 data-aos="fade-down" data-aos-delay="1700" data-aos-duration="1500">
+      <h2
+        data-aos="fade-down"
+        data-aos-easing="ease-in-out"
+        data-aos-duration="800"
+        data-aos-delay="2000"
+        data-aos-once="true"
+      >
         자주 묻는 질문
       </h2>
       <div
         className="category-tabs"
         data-aos="fade-down"
-        data-aos-delay="2000"
-        data-aos-duration="1500"
+        data-aos-easing="ease-in-out"
+        data-aos-duration="800"
+        data-aos-delay="2100"
+        data-aos-once="true"
       >
         <div
           className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
@@ -97,8 +121,10 @@ export default function FAQ() {
       <div
         className="content-tabs"
         data-aos="fade-down"
-        data-aos-delay="1800"
-        data-aos-duration="1500"
+        data-aos-easing="ease-in-out"
+        data-aos-duration="800"
+        data-aos-delay="2200"
+        data-aos-once="true"
       >
         <div className={toggleState === 1 ? "active-content" : "content"}>
           <div className={toggleAnswer === 1 ? "active-question" : "question"}>

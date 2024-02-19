@@ -4,20 +4,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/navigation";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
-import "../images/sport1.jpg";
 import { Autoplay, Navigation } from "swiper/modules";
 import { SportsProvider, SportsContext } from "./context/SportsContext";
 import { useQuery } from "@tanstack/react-query";
 import { getProducts } from "../api/firebase";
 import ProductCard from "./ProductCard";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Sport() {
   useEffect(() => {
     AOS.init();
-  }, []);
+  });
 
   const sportsContext = useContext(SportsContext);
 
@@ -52,14 +51,22 @@ export default function Sport() {
   return (
     <SportsProvider>
       <section className="sport">
-        <h3 data-aos="fade-down" data-aos-delay="1200" data-aos-duration="1500">
+        <h3
+          data-aos="fade-down"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="800"
+          data-aos-delay="1400"
+          data-aos-once="true"
+        >
           shop by sport
         </h3>
         <div
           className="sport-filters"
           data-aos="fade-down"
-          data-aos-delay="1600"
-          data-aos-duration="1500"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="800"
+          data-aos-delay="1500"
+          data-aos-once="true"
         >
           {categories.map((category, index) => {
             return (
@@ -75,8 +82,10 @@ export default function Sport() {
         </div>
         <Swiper
           data-aos="fade-down"
-          data-aos-delay="1800"
-          data-aos-duration="1500"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="800"
+          data-aos-delay="1600"
+          data-aos-once="true"
           loop={true}
           rewind={true}
           autoplay={{

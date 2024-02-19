@@ -2,8 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Main.scss";
 import { Link } from "react-router-dom";
 import MainVideo from "../../videos/nike.mp4";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 export default function Main() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -29,9 +27,6 @@ export default function Main() {
       setIsPlaying(false);
     }
   };
-  useEffect(() => {
-    AOS.init();
-  }, []);
 
   return (
     <main className="main">

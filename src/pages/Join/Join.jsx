@@ -7,64 +7,8 @@ import { useNavigate } from "react-router";
 import { uploadImage } from "../../api/uploader";
 
 export default function Join() {
-  // const [user, setUser] = useState("");
   const [filePreview, setFilePreview] = useState();
   const navigate = useNavigate();
-
-  // const handleJoin = async (userData) => {
-  //   try {
-  //     let photoURL = null;
-  //     if (userData.selectedFile) {
-  //       photoURL = await uploadImage(userData.selectedFile);
-  //     }
-
-  //     const userCredential = await signUp({
-  //       email: userData.email,
-  //       password: userData.password,
-  //       displayName: userData.displayName,
-  //       photoURL: photoURL.toString(),
-  //     });
-
-  //     if (userCredential) {
-  //       const user = userCredential.user;
-  //       setUser({ ...user, photoURL: photoURL.toString() });
-  //       navigate("/");
-  //       window.location.reload();
-  //     } else {
-  //       console.error("회원가입 오류: userCredential이 null입니다");
-  //     }
-  //   } catch (error) {
-  //     console.error("회원가입 오류:", error);
-  //   }
-  // };
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   const formData = new FormData(e.target);
-  //   const userData = {
-  //     email: formData.get("userEmail"),
-  //     password: formData.get("password"),
-  //     displayName: formData.get("displayName"),
-  //     selectedFile: formData.get("file"),
-  //   };
-  //   await handleJoin(userData);
-  // };
-
-  // const handleChange = (e) => {
-  //   const file = e.target.files[0];
-  //   const reader = new FileReader();
-  //   reader.onload = (e) => {
-  //     setFilePreview(e.target.result);
-  //   };
-  //   reader.readAsDataURL(file);
-  // };
-
-  // const handleKeyPress = (e) => {
-  //   if (e.key === "Enter") {
-  //     e.preventDefault();
-  //     handleSubmit();
-  //   }
-  // };
 
   const handleJoin = async (formData) => {
     try {

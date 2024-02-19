@@ -1,0 +1,17 @@
+.ChatUserList {
+  width: 100%;
+  // height: 50px;
+  background-color: blue;
+  li {
+    width: 100%;
+    height: 50px;
+    border: 1px solid red;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+
+    span {
+      font-family: "Noto Sans KR", sans-serif;
+      font-size: 15px;
+    }
+  }
+}

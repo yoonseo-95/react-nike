@@ -7,8 +7,7 @@ import useCart from "../../hooks/useCart";
 import Modal from "../../components/Modal";
 import useBookmark from "../../hooks/useBookmark";
 import { useAuthContext } from "../../components/context/AuthContext";
-import { GoChevronLeft } from "react-icons/go";
-import { GoShareAndroid } from "react-icons/go";
+import { GoShareAndroid, GoChevronLeft } from "react-icons/go";
 import { useRecoilState } from "recoil";
 import { BookmarkAtom, CartItemAtom } from "../../recoil/RecoilAtoms";
 
@@ -23,6 +22,7 @@ export default function ProductDetail() {
   } = useLocation();
 
   const [cartItem, setCartItem] = useRecoilState(CartItemAtom);
+
   const [bookmarkOn, setBookmarkOn] = useRecoilState(BookmarkAtom);
 
   const navigate = useNavigate();
@@ -59,17 +59,17 @@ export default function ProductDetail() {
       category,
     };
 
-    if (bookmarkOn) {
+    if (!bookmarkOn) {
       removeItem.mutate(id, {
         onSuccess: () => {
-          setBookmarkOn(false);
+          setBookmarkOn(true);
           setTimeout(() => setSuccess(null), 2000);
         },
       });
     } else {
       addOrUpdatedBookMark.mutate(product, {
         onSuccess: () => {
-          setBookmarkOn(true);
+          setBookmarkOn(false);
           setTimeout(() => setSuccess(null), 2000);
         },
       });
@@ -176,11 +176,11 @@ export default function ProductDetail() {
             </ul>
           </div>
           <div className="product-cart-buy-wrap">
-            {!bookmarkOn ? (
+            {bookmarkOn ? (
               <PiHeartDuotone className="bookmark" onClick={handleBookmark} />
             ) : (
               <PiHeartFill
-                className={`bookmark ${bookmarkOn ? "on" : ""}`}
+                className={`bookmark ${!bookmarkOn ? "on" : ""}`}
                 onClick={handleBookmark}
               />
             )}

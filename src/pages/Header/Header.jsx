@@ -287,12 +287,10 @@ export default function Header({ user, setUser }) {
                     }`}
                     onClick={() => {
                       toggleMobileMenuList(menu.id);
-                      toggleMobileMenu();
-                      navigate(menu.menu === "제품" ? "/products" : menu.path);
                     }}
                   >
                     {menu.menu === "제품" ? (
-                      <Link to="/">
+                      <Link to="/" onClick={(e) => e.preventDefault()}>
                         {menu.name}
                         <FiChevronDown className="m-icon" />
                       </Link>
@@ -318,7 +316,9 @@ export default function Header({ user, setUser }) {
                                 toggleMobileSubMenu(category.category_id, e)
                               }
                             >
-                              <Link to="/">{category.category_name}</Link>
+                              <Link to="/" onClick={(e) => e.preventDefault()}>
+                                {category.category_name}
+                              </Link>
                               {isMobileSubMenu === category.category_id && (
                                 <ul className="subMenu-sub">
                                   {category.sub_categories?.map((sub) => {
@@ -402,6 +402,7 @@ export default function Header({ user, setUser }) {
                       <Link to="/mypage">마이페이지</Link>
                     </li>
                   )}
+
                   <li
                     className={
                       scrollPosition < 100 ? "m-logout" : "m-logout-color"

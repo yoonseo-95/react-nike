@@ -24,3 +24,30 @@ export const enteredFilterState = atom({
   key: 'enteredFilterState',
   default: [],
 })
+
+export const userMessagesState = atom({
+  key: 'userMessages',
+  default: [],
+})
+
+export const adminMessageState = atom({
+  key: 'adminMessages',
+  default: [],
+})
+
+export const chatRoomsState = atom({
+  key: "chatRoomsState",
+  default: []
+})
+
+export const showChatRoomState = atom({
+  key: "showChatRoom",
+  default: false
+})
+
+export const endMessageState = atom({
+  key: "endMessage",
+  default: ""
+})
+
+

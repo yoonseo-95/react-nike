@@ -147,7 +147,7 @@
             font-family: "Noto Sans KR", sans-serif;
             color: #fff;
             font-size: 1rem;
-            font-weight: 400;
+            font-weight: 300;
             line-height: 1.8rem;
             margin-bottom: 24px;
           }
@@ -208,7 +208,7 @@
   }
 }
 
-@media all and (max-width: 768px) and (min-width: 580px) {
+@media all and (max-width: 748px) and (min-width: 580px) {
   .TrendingWrap {
     .trending-txt {
       .bg_txt2 {
@@ -260,6 +260,7 @@
     }
   }
 }
+
 @media all and (max-width: 580px) and (min-width: 425px) {
   .TrendingWrap {
     padding: 0;

@@ -7,20 +7,28 @@ import "aos/dist/aos.css";
 export default function Trending() {
   useEffect(() => {
     AOS.init();
-  }, []);
+  });
   return (
     <section className="TrendingWrap">
       <div className="trending-txt">
-        <h3 data-aos="fade-down" data-aos-delay="900" data-aos-duration="1500">
+        <h3
+          data-aos="fade-down"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="800"
+          data-aos-delay="1200"
+          data-aos-once="true"
+        >
           trending
         </h3>
       </div>
       <div className="trending">
         <div
           className="banner1"
-          data-aos="fade-down"
-          data-aos-delay="1000"
-          data-aos-duration="1500"
+          data-aos="fade-right"
+          data-aos-duration="800"
+          data-aos-delay="1300"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-once="true"
         >
           <div className="banner1-txt">
             <h2>나이키 에어포스 1'07</h2>
@@ -38,16 +46,17 @@ export default function Trending() {
           <div
             className="banner2"
             data-aos="fade-right"
-            data-aos-delay="1200"
-            data-aos-duration="1500"
-            data-aos-easing="linear"
+            data-aos-duration="800"
+            data-aos-delay="1300"
+            data-aos-anchor-placement="top-bottom"
+            data-aos-once="true"
           >
             <div className="banner2-txt">
               <h2>나이키 러닝화</h2>
               <p>
-                부드러운 촉감과 가벼운 착화감으로
+                가벼운 착화감으로 편안한
                 <br />
-                자유로운 러닝을 경험해 보세요.
+                러닝을 경험해 보세요.
               </p>
               <button>
                 <Link to={"/products"}>구매하기</Link>
@@ -57,9 +66,10 @@ export default function Trending() {
           <div
             className="banner3"
             data-aos="fade-left"
-            data-aos-delay="1400"
-            data-aos-duration="1500"
-            data-aos-easing="linear"
+            data-aos-duration="800"
+            data-aos-delay="1300"
+            data-aos-anchor-placement="top-bottom"
+            data-aos-once="true"
           >
             <div className="banner3-txt">
               <h2>나이키 컬러감</h2>

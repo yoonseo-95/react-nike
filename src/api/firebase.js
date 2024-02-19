@@ -1,17 +1,8 @@
-import { initializeApp } from "firebase/app";
-import { v4 as uuid } from "uuid";
-import {
-  getAuth,
-  signInWithPopup,
-  GoogleAuthProvider,
-  signOut,
-  onAuthStateChanged,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  updateProfile as firebaseUpdatedProfile,
-  deleteUser
-} from "firebase/auth";
-import { getDatabase, ref as databaseRef, set, get, remove, query, orderByChild, startAt, endAt } from "firebase/database";
+import { initializeApp } from 'firebase/app';
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged, createUserWithEmailAndPassword, deleteUser, signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { getDatabase, ref, push, set, get, remove, query, orderByChild, startAt, endAt, onValue } from "firebase/database";
+import { v4 as uuidv4 } from 'uuid';
+import { nanoid } from "nanoid";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -24,8 +15,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
-const database = getDatabase(app);
-
+export const database = getDatabase(app);
 
 export function login() {
   signInWithPopup(auth, provider.setCustomParameters({
@@ -47,8 +37,8 @@ export function onUserStateChange(callback) {
   });
 }
 
-async function adminUser(user) {
-  return get(databaseRef(database, "admins"))
+export async function adminUser(user) {
+  return get(ref(database, "admins"))
     .then((snapshot) => {
       if (snapshot.exists()) {
         const admins = snapshot.val();
@@ -59,13 +49,14 @@ async function adminUser(user) {
     });
 }
 
-export async function addNewProduct(product, mainImageUrl) {
-  const id = uuid();
 
-  return set(databaseRef(database, `products/${id}`), {
+export async function addNewProduct(product, mainImageUrl) {
+  const id = uuidv4();
+
+  return set(ref(database, `products/${id}`), {
     ...product,
     id,
-    image: mainImageUrl, //main image URL
+    image: mainImageUrl,
     price: parseInt(product.price),
     size: product.size ? product.size.split(",") : [],
     colors: product.colors.map(color => ({
@@ -78,7 +69,7 @@ export async function addNewProduct(product, mainImageUrl) {
 
 
 export async function getProducts() {
-  return get(databaseRef(database, 'products')).then(snapshot => {
+  return get(ref(database, 'products')).then(snapshot => {
     if (snapshot.exists()) {
       return Object.values(snapshot.val())
     }
@@ -88,7 +79,7 @@ export async function getProducts() {
 
 
 export async function getCart(userId) {
-  return get(databaseRef(database, `carts/${userId}`))
+  return get(ref(database, `carts/${userId}`))
     .then(snapshot => {
       const items = snapshot.val() || {};
       return Object.values(items);
@@ -97,15 +88,15 @@ export async function getCart(userId) {
 
 
 export async function addOrUpdateToCart(userId, product) {
-  return set(databaseRef(database, `carts/${userId}/${product.id}`), product);
+  return set(ref(database, `carts/${userId}/${product.id}`), product);
 }
 
 export async function removeFromCart(userId, productId) {
-  return remove(databaseRef(database, `carts/${userId}/${productId}`))
+  return remove(ref(database, `carts/${userId}/${productId}`))
 }
 
 export async function getBookmark(userId) {
-  return get(databaseRef(database, `bookmark/${userId}`))
+  return get(ref(database, `bookmark/${userId}`))
     .then(snapshot => {
       const items = snapshot.val() || {};
       return Object.values(items);
@@ -120,11 +111,11 @@ export async function addOrUpdatedToBookmark(userId, product) {
     ...product,
     bookmarkedDate: formattedDate
   }
-  return set(databaseRef(database, `bookmark/${userId}/${product.id}`), bookmarkData)
+  return set(ref(database, `bookmark/${userId}/${product.id}`), bookmarkData)
 }
 
 export async function removeFromBookmark(userId, productId) {
-  return remove(databaseRef(database, `bookmark/${userId}/${productId}`))
+  return remove(ref(database, `bookmark/${userId}/${productId}`))
 }
 
 export async function signUp({ email, password, displayName, photoURL }) {
@@ -179,7 +170,7 @@ export async function updateProfilePhoto(auth, user) {
       displayName: user.displayName,
       photoURL: user.photoURL
     }
-    await firebaseUpdatedProfile(auth.currentUser, profile);
+    await updateProfile(auth.currentUser, profile);
     return user;
   } catch (error) {
     console.log("프로필 업데이트 오류:", error)
@@ -187,7 +178,7 @@ export async function updateProfilePhoto(auth, user) {
 }
 
 export async function fetchProductsFirebase(search) {
-  const productsRef = databaseRef(database, "products");
+  const productsRef = ref(database, "products");
 
   if (!search) {
     const response = await get(productsRef);
@@ -222,4 +213,86 @@ export async function fetchProductsFirebase(search) {
   const searchResults = [...titleResults, ...categoryResults];
 
   return searchResults;
+}
+
+export function getChatMessages(selectedUser, setChatRooms) {
+  let chatRef;
+
+  if (selectedUser) {
+    chatRef = ref(database, `chatRooms/${selectedUser}`);
+  } else {
+    chatRef = ref(database, 'chatRooms');
+  }
+
+  const unsubscribe = onValue(chatRef, (snapshot) => {
+    const chatData = snapshot.val();
+    setChatRooms(chatData);
+  });
+
+  return unsubscribe;
+}
+let nonLoggedInUid;
+
+export async function getNonLoggedInUid() {
+  if (!nonLoggedInUid) {
+    nonLoggedInUid = nanoid(4)
+  }
+  return nonLoggedInUid;
+}
+
+export async function sendMessage(message, timestamp, uid, customerId, userType) {
+  try {
+    const messageRef = ref(database, `chatRooms/${customerId}/messages`);
+    const newMessageRef = push(messageRef);
+    const chatData = {
+      message: message,
+      timestamp: timestamp,
+      uid: uid,
+      userType: userType
+    }
+
+    await set(newMessageRef, chatData);
+    return newMessageRef.key;
+  } catch (error) {
+    console.error("sendMessage 함수에세 오류 발생:", error);
+    return false;
+  }
+}
+
+export async function startChat(setChatRooms, user) {
+  console.log("startChat 호출");
+  try {
+    const uid = user ? user.displayName : await getNonLoggedInUid();
+    const customerId = uid;
+
+    const chatData = {
+      room: customerId,
+      uid: uid,
+      timestamp: Date.now(),
+      img: user?.photoURL || ""
+    }
+
+    await set(ref(database, `chatRooms/${customerId}`), chatData);
+
+    setChatRooms(chatData);
+
+    console.log("상담 요청");
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function endChat(user) {
+  console.log("endChat 호출");
+  try {
+    const uid = user ? user.displayName : await getNonLoggedInUid();
+    const customerId = uid;
+
+    const userChatRoomRef = ref(database, `chatRooms/${customerId}`);
+    await remove(userChatRoomRef);
+
+    console.log("상담 종료");
+  } catch (error) {
+    console.error(error);
+  }
 }
